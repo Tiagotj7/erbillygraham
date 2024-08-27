@@ -1,0 +1,40 @@
+body{
+
+
+    height: 100%;
+    padding: 0;
+    width: 0;
+
+
+}
+
+
+.logo-container img{
+
+
+    display: flex;
+    height: 100px;
+    margin-right: 10px;
+}
+header{
+
+
+    display: flex;
+
+
+}
+
+
+
+
+header h2{
+
+
+    display: flex;
+    margin: 0;
+    font-style: italic;
+   
+
+
+   
+}
