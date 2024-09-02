@@ -8,14 +8,6 @@ body{
 
 }
 
-.logo-container {
-
-background: red;
-
-
-
-}
-
 
 .logo-container img{
     display: flex;
@@ -26,6 +18,7 @@ header{
 
 
     display: flex;
+backgraound: red;
 
 
 }
