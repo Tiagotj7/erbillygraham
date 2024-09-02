@@ -19,6 +19,7 @@ header{
 
     display: flex;
 
+
 }
 
 
@@ -28,6 +29,8 @@ header h2{
 
 
     display: flex;
+margin: 0;
+
     font-style: italic;
 
 
