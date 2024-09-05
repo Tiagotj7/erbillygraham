@@ -19,19 +19,36 @@ header{
 
     display: flex;
     align-items: center;
+    background-color: blue;
 
 }
 
 header h1{
 
+    color: black;
     display: flex;
     margin: 0;
     font-style: italic;
    
 }
 
+.nav-top a{
+
+    margin: 3px;
+    margin-left: 100px;
+    text-decoration: none;
+    color: white;
+
+}
+
+.nav-top a:active{
+
+    color: yellow;
+}
+
 .header-divisor{
 
+    transition: red 0.3s ease;
     background-color: blue;
     height: 2px;
     width: 100%;
