@@ -35,7 +35,7 @@ header h1{
 .nav-top a{
 
     margin: 3px;
-    margin-left: 100px;
+    margin-left: 90px;
     text-decoration: none;
     color: white;
 
@@ -54,3 +54,33 @@ header h1{
     width: 100%;
 
 }
+
+.content{
+
+    display: none;
+
+}
+
+.expansivel-top{
+
+    cursor: pointer;
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    margin-left: 820px;
+    margin-top: -20px;
+
+}
+
+.expansivel-top :active{
+
+    color: red;
+}
+
+.subtextos-top a{
+
+    display: block;
+    margin-left: 800px;
+    text-align: center;
+}
+
