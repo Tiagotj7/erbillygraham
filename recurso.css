@@ -14,6 +14,12 @@ body{
     padding: 50px;
 }
 
+.faixa-top h1{
+
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
 .container-manual{
 
     display: flex;
