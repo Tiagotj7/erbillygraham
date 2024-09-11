@@ -36,6 +36,26 @@ body{
 
 }
 
+.historys4{
+
+    white-space: pre-line;
+    color: black;
+    font-size: 15px;
+    font-family: 'Castellar', serif;
+    flex-wrap: wrap;
+
+}
+
+.historys5{
+
+    white-space: pre-line;
+    color: black;
+    font-size: 15px;
+    font-family: 'Castellar', serif;
+    flex-wrap: wrap;
+
+}
+
 .faixa-top{
 
     background-color: blue;
