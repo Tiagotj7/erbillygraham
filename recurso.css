@@ -8,3 +8,22 @@ body{
 
 }
 
+.container-manual{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+}
+
+.container-manual div img{
+
+    height: auto;
+
+}
+
+.hino{
+
+    white-space: pre-line;
+}
