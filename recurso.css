@@ -8,6 +8,12 @@ body{
 
 }
 
+.faixa-top{
+
+    background-color: blue;
+    padding: 50px;
+}
+
 .container-manual{
 
     display: flex;
