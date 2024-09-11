@@ -40,3 +40,12 @@ button:active{
     background-color: green;
 }
 
+.container-edicoes{
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+
+}
+
