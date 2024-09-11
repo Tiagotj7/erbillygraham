@@ -111,7 +111,19 @@ a:hover{
 
 .citar{
 
+    white-space: pre-line;
     text-align: center;
+    z-index: -1;
+    color: white;
+    background: linear-gradient(black, black) no-repeat;
+    background-clip: padding-box;
+    -webkit-background-clip: text;
+    text-shadow: 
+        1px 1px 0 #000, 
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000;
+
 }
 
 /*-----------------------------footer----------------------------------*/
