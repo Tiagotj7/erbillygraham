@@ -27,3 +27,16 @@ body{
 
     white-space: pre-line;
 }
+
+.botao-cifra button{
+
+    border-radius: 10px;
+    cursor: pointer;
+
+}
+
+button:active{
+
+    background-color: green;
+}
+
