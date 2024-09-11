@@ -3,5 +3,12 @@ body{
     min-height: 100vh;
     margin: 0;
     padding: 0;
-    
+
+}
+
+.faixa-top{
+
+    background-color: blue;
+    padding: 50px;
+
 }
