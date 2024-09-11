@@ -68,3 +68,15 @@ body{
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
+
+button{
+
+    cursor: pointer;
+    border-radius: 50px;
+
+}
+
+button:active{
+
+    background-color: green;
+}
