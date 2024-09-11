@@ -19,3 +19,36 @@ body{
     font-family: Georgia, 'Times New Roman', Times, serif;
 
 }
+
+.cartoon-container{
+
+    background-color: red;
+    flex: 1;
+    text-align: center;
+
+}
+
+.contact-container{
+
+    display: flex;
+    flex-direction: column;
+
+}
+
+.contact-icon{
+
+    transition:  0.2s;
+}
+
+.contact-icon:hover{
+
+    transform: scale(1.1);
+}
+
+.conversando-container{
+
+    flex: 1;
+    text-align: center;
+    margin-top: -350px;
+
+}
