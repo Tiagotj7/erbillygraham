@@ -103,6 +103,12 @@ a:hover{
     transform: scale(1.1);
 }
 
+.compromisso{
+
+    white-space: pre-line;
+
+}
+
 /*-----------------------------footer----------------------------------*/
 
 .footer{
