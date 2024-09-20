@@ -142,17 +142,39 @@ a:hover{
 
 }
 
+.cardbilly{
+
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+
+}
+
 .cardbilly img{
 
-    height: cover;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
     
 }
 
 .cardbilly h1,h2{
 
-    margin-left: 100px;
-    text-align: start;
+    color: white;
+    position: absolute;
     
+
+}
+
+.cardbilly h1{
+
+    display: flex;
+    top: 30%;
+
 }
 
 
