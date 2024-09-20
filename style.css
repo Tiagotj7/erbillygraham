@@ -83,21 +83,25 @@ header h1{
 
 /*----------------Barra Portal+-----------------*/
 
+.geralcontent-container{
+
+    /*Deixa os subtextos abaixo do nome portal+*/
+
+}
 
 .content{
 
     display: none;
-    margin-top: 10px;
+    margin-top: 1px;
 
     position: relative;
-    padding: 10px;
 
 }
 
 .content a{
 
     display: block;
-    padding: 5px 0;
+    padding: 1px 0;
 
 }
 
