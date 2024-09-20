@@ -89,12 +89,15 @@ header h1{
     display: none;
     margin-top: 10px;
 
+    position: relative;
+    padding: 10px;
+
 }
 
 .content a{
 
     display: block;
-    padding: 1px 0;
+    padding: 5px 0;
 
 }
 
