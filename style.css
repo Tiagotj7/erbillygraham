@@ -12,34 +12,42 @@ body,html{
 
 .logo-container img{
 
-    display: flex;
     height: 100px;
-    margin-right: 10px;
 
 }
 
 .geralnav-container{
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+    gap: 20px;
 
 }
 
 header{
 
     background-color: blue;
-
+    width: 100%;
 
 }
 
 header h1{
 
     color: white;
-    display: flex;
     margin: 0;
     font-style: italic;
-   
+    margin: 0;
+
+}
+
+/*-----------------NAV---------------*/
+
+.nav-top{
+
+    display: flex;
+    gap: 80px;
+
 }
 
 .nav-top a{
@@ -55,6 +63,27 @@ header h1{
 
 }
 
+/*-----------------A---------------*/
+
+.a1-container, .a2-container, .a3-container, .a4-container, .a5-container{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+
+}
+
+.a1-container, .a2-container, .a3-container, .a4-container, .a5-container :hover{
+
+    transform: scale(1.1);
+
+}
+
+
+/*---------------------------------*/
+
+
 .content{
 
     display: none;
@@ -67,8 +96,6 @@ header h1{
     color: white;
     text-decoration: none;
     transition: color 0.3s ease;
-    margin-left: 820px;
-    margin-top: -25px;
 
 }
 
@@ -90,20 +117,6 @@ a{
 }
 
 a:hover{
-
-    transform: scale(1.1);
-}
-
-.geral-top{
-
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-
-    transition: 0.3s;
-}
-
-.geral-top:hover{
 
     transform: scale(1.1);
 }
@@ -138,7 +151,6 @@ a:hover{
 
     display: flex;
     justify-content: center;
-    background-color:transparent;
 
 }
 
@@ -189,5 +201,3 @@ a:hover{
     height: auto;
 
 }
-
-/*Continuar a ajustar a imagem billy com  o texto h1 e h2,para sobrepor a imagem*/
