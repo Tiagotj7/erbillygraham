@@ -87,6 +87,14 @@ header h1{
 .content{
 
     display: none;
+    margin-top: 10px;
+
+}
+
+.content a{
+
+    display: block;
+    padding: 1px 0;
 
 }
 
@@ -101,13 +109,14 @@ header h1{
 
 .expansivel-top:hover{
 
-    color: red;
     transform: scale(1.1);
+
 }
 
 .subtextos-top a{
 
-    display: block;
+    display: flex;
+
 
 }
 
