@@ -17,6 +17,7 @@ body, html{
 
     color: white;
     font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 
 .container-manual{
@@ -34,10 +35,30 @@ body, html{
 
 }
 
+h1{
+
+    padding: 15px;
+
+}
+
 .hino{
 
     white-space: pre-line;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 15px;
+
+}
+
+.botao-cifra{
+
+    padding: 20px;
+
+}
+
+h3{
+
+    padding: 15px;
+
 }
 
 .botao-cifra button{
