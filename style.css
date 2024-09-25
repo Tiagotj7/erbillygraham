@@ -23,12 +23,16 @@ body, html{
     align-items: center;
     gap: 20px;
 
+    background-color: blue;
+
 }
 
 header{
 
     background-color: blue;
     width: 100%;
+    height: auto;
+    
 
 }
 
@@ -111,6 +115,7 @@ header h1{
     color: white;
     text-decoration: none;
     transition: color 0.3s;
+
 
 }
 
