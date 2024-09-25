@@ -152,6 +152,15 @@ p{
 
 }
 
+/*----------------Espaçamento no Texto dos Requisitos-------------------*/
+
+.requisitos-container{
+
+    padding: 15px;
+
+}
+
+
 /*----------------------------------------*/
 
 a{
@@ -208,7 +217,6 @@ a:hover{
     display: flex;
     justify-content: start;
     align-items: center;
-    flex-direction: column;
     
 
 }
@@ -225,17 +233,23 @@ a:hover{
 
     color: white;
     position: absolute;
-    margin-left: 100px;
+    margin-left: 20px;
+    
 
 }
 
 .cardbilly h1{
 
     display: flex;
-    top: 30%;
+    top: 10%;
 
 }
 
+.cardbilly h2{
+
+    top: 30%;
+
+}
 
 /*-----------------------------footer----------------------------------*/
 
