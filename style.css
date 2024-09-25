@@ -4,6 +4,7 @@ body, html{
     margin: 0;
     height: 100%;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    box-sizing: border-box;
 
 }
 
@@ -19,11 +20,10 @@ body, html{
 .geralnav-container{
 
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
     align-items: center;
-    gap: 20px;
-
-    background-color: blue;
+    max-width: 1200px;
+    margin: 0 auto;
 
 }
 
@@ -33,6 +33,7 @@ header{
     width: 100%;
     height: auto;
     
+    box-sizing: border-box;
 
 }
 
@@ -42,15 +43,34 @@ header h1{
     margin: 0;
     font-style: italic;
     margin: 0;
+    font-size: 2rem;
+    text-align: center;
+    flex-grow: 1;
 
 }
 
-/*-----------------NAV---------------*/
+p{
+
+    font-size: 1rem
+}
+
+/*---------Imagens Responsivas----------------*/
+
+.logo-container img, .banner img, .cardbilly img{
+
+    max-width: 100%;
+    height: auto;
+
+}
+
+
+/*-----------------NAV------------------------*/
 
 .nav-top{
 
     display: flex;
-    gap: 80px;
+    gap: 20px;
+    flex-wrap: wrap;  /* Permite que os itens se ajustem para uma nova linha em telas menores */
 
 }
 
@@ -188,6 +208,7 @@ a:hover{
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-direction: column;
     
 
 }
@@ -225,5 +246,76 @@ a:hover{
     align-items: center;
     background-color: yellow;
     height: auto;
+    text-align: center;
+    padding: 20px;
+
+}
+
+/*-----------------------------Responsivo para outros aparelhos----------------------------------*/
+
+
+/* Implemente media queries para ajustar o layout para diferentes dispositivos */
+
+/* Para telas menores que 768px (tablets e celulares) */
+
+@media (max-widht: 768px) {
+
+    .geralnav-container {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    header h1 {
+
+        font-size: 1.5rem;
+        text-align: center;
+
+    }
+
+    .nav-top {
+
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .cardbilly h1, .cardbilly h2 {
+
+        text-align: center;
+        font-size: 1.2rem;
+
+    }
+ }
+
+/* Para telas menores que 480px (celulares) */
+
+ @media(max-widht: 480px) {
+
+    header h1 {
+
+        font-size: 1.2rem;
+
+    }
+
+    .nav-top {
+        
+        gap: 10px;
+
+    }
+
+    p {
+
+        font-size: 0.9rem;
+
+    }
+ }
+
+/* Telas grandes (desktops e acima) */
+
+@media (min-width: 1200px) {
+
+    /* Definir estilos específicos para telas grandes */
 
 }
