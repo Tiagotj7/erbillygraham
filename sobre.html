@@ -1,61 +1,420 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="sob.css">
-
-    <title>Sobre</title>
+    <title>Sobre os Embaixadores do Rei</title>
+    <style>
+        :root {
+            --primary-color: #003767;
+            --secondary-color: #bf9b30;
+            --accent-color: #e63946;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --header-bg: #001f3f;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .faixa-top {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-container img {
+            height: 60px;
+            width: auto;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .page-title {
+            margin-top: 3rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+        
+        .page-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--secondary-color);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .hero-banner {
+            background-color: var(--primary-color);
+            color: white;
+            text-align: center;
+            padding: 4rem 2rem;
+            margin-bottom: 3rem;
+            background-image: linear-gradient(rgba(0,31,63,0.8), rgba(0,31,63,0.8));
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-banner h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-banner p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .organizar-logo {
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        .organizar-logo img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease;
+        }
+        
+        .organizar-logo img:hover {
+            transform: scale(1.02);
+        }
+        
+        .info-section {
+            background-color: var(--light-bg);
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .info-section h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+            display: inline-block;
+        }
+        
+        .info-section p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            text-align: justify;
+        }
+        
+        .info-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .info-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .info-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            border-bottom: none;
+        }
+        
+        .info-card-icon {
+            color: var(--secondary-color);
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .objetivos-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .objetivos-list li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .objetivos-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+        
+        .card-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .mission-card {
+            text-align: center;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .mission-card img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section {
+            text-align: center;
+            margin: 4rem 0;
+            padding: 3rem 2rem;
+            background-color: var(--light-bg);
+            border-radius: 10px;
+        }
+        
+        .cta-section h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--accent-color);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background-color: #c1272d;
+        }
+        
+        footer {
+            background-color: var(--header-bg);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Seção de valores */
+        .valores-section {
+            margin: 4rem 0;
+        }
+        
+        .valores-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+        
+        .valor-card {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .valor-card .icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .valor-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .faixa-top {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .hero-banner h2 {
+                font-size: 1.8rem;
+            }
+            
+            .card-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    
-    <header></header>
-
+    <header>
         <div class="faixa-top">
-
-            <h1>Embaixada Billy Graham</h1>
-
+            <h1 style="color: white; font-size: 1.5rem;">Embaixada Billy Graham</h1>
         </div>
-
     </header>
 
-<h1>Sobre</h1>
+    <div class="container">
+        <h1 class="page-title">Sobre os Embaixadores do Rei</h1>
+        
+        <div class="organizar-logo">
+            <img src="src/sobre er.png" alt="Embaixadores do Rei">
+        </div>
+        
+        <section class="info-section">
+            <h3>O Que é a Organização Embaixadores do Rei?</h3>
+            <p>Embaixadores do Rei é uma organização batista cujas atividades visam os desenvolvimentos físicos, morais e espirituais dos meninos de 9 a 17 anos. É uma organização missionária que procura conduzir os seus membros na participação ativa de Missões. Seu programa abrange: Missões, Mordomia, Evangelização, Recreação e Acampamentos.</p>
+        </section>
+        
+        <div class="card-container">
+            <div class="info-card">
+                <div class="info-card-icon">📜</div>
+                <h3>Como surgiu a Organização ER?</h3>
+                <p>Em 1908, os batistas do Sul dos Estados Unidos se despertaram para a necessidade de criar nas igrejas um ambiente mais apropriado para meninos de 9 a 16 anos. Sentia-se uma carência de melhor atendimento aos interesses e necessidades específicos dessa faixa etária. Da ideia, originou-se a organização Embaixadores do Rei.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-card-icon">👑</div>
+                <h3>Por que o Nome Embaixadores do Rei?</h3>
+                <p>Um Embaixador é aquele que representa o seu governo em outro país. A tarefa do Embaixador é interpretar a atitude do seu povo para com o povo de outras nações. Esta ideia é fundamental na organização Embaixadores do Rei. Um verdadeiro Embaixador do Rei zelará pelos interesses do seu Rei Jesus, aqui na terra, e procurará, por todos os meios, mostrar aos outros o que significa ser cristão.</p>
+                <p>O nome Embaixadores do Rei (Royal Ambassador), foi inspirado no hino Mensagem Real (The King's Business). Foi recomendado e aceito como nome oficial para essa organização em maio de 1908. O nome Embaixadores do Rei é usado em vários países do mundo.</p>
+            </div>
+            
+            <div class="info-card">
+                <div class="info-card-icon">🌎</div>
+                <h3>Como a Organização ER chegou ao Brasil?</h3>
+                <p>Embaixadores do Rei teve o seu início no Brasil em 1948, graças ao pioneirismo do incansável missionário William Alvin Hatton. A organização contou, inicialmente, com o auxílio da União Feminina Missionária Batista do Brasil, passando desde fevereiro de 1950 a ser promovida pela JUERP (Junta de Educação Religiosa e Publicações) da Convenção Batista Brasileira e a partir de 1978 pela UHBB. Deus tem abençoado sobremaneira a organização Embaixadores do Rei, que cresce ano após ano. O progresso deve-se principalmente aos conselheiros de todos esses anos.</p>
+            </div>
+        </div>
+        
+        <section class="info-section">
+            <h3>O Objetivo da Organização</h3>
+            <p>O objetivo da organização Embaixadores do Rei é desenvolver o caráter cristão dos meninos de tal maneira que se tornem crentes ativos e consagrados, possuídos de um espírito intensamente evangelístico e missionário.</p>
+            
+            <p>Para alcançar o seu objetivo, a organização oferece o seguinte:</p>
+            <ul class="objetivos-list">
+                <li>Um sistema de postos atraente e prático, que ajuda os meninos a conhecerem mais a Bíblia e a obra missionária;</li>
+                <li>Um programa de atividades próprias para os Embaixadores do Rei como Serviço Real, acampamentos e excursões;</li>
+                <li>Vários tipos de reuniões, numa programação agradável e variada.</li>
+            </ul>
+        </section>
+        
+        <section class="valores-section">
+            <h2 class="section-title" style="text-align: center; margin-bottom: 2rem; color: var(--primary-color);">Nossos Pilares</h2>
+            
+            <div class="valores-container">
+                <div class="valor-card">
+                    <div class="icon">🙏</div>
+                    <h3>Missões</h3>
+                    <p>Participação ativa na obra missionária, tanto local quanto global, sensibilizando os meninos para a importância de levar a mensagem do evangelho a todos os povos.</p>
+                </div>
+                
+                <div class="valor-card">
+                    <div class="icon">💰</div>
+                    <h3>Mordomia</h3>
+                    <p>Ensinamentos sobre o uso responsável dos recursos, talentos e tempo que Deus nos confiou, incentivando uma vida de generosidade e serviço.</p>
+                </div>
+                
+                <div class="valor-card">
+                    <div class="icon">📣</div>
+                    <h3>Evangelização</h3>
+                    <p>Preparação dos meninos para compartilhar sua fé e testemunhar de Cristo através de palavras e ações em seu dia a dia.</p>
+                </div>
+                
+                <div class="valor-card">
+                    <div class="icon">⛺</div>
+                    <h3>Acampamentos</h3>
+                    <p>Experiências ao ar livre que promovem comunhão, aprendizado bíblico e desenvolvimento de habilidades em um ambiente natural e divertido.</p>
+                </div>
+            </div>
+        </section>
+        
+        <div class="cta-section">
+            <h2>Faça Parte Desta História</h2>
+            <p style="max-width: 800px; margin: 0 auto 2rem auto;">A organização Embaixadores do Rei continua transformando vidas de meninos por todo o Brasil, formando líderes cristãos comprometidos com os valores do Reino de Deus.</p>
+            <a href="#" class="cta-button">Saiba Como Participar</a>
+        </div>
+    </div>
 
-
-<div class="organizar-logo">
-
-    <img src="src/sobre er.png" alt="ER">
-
-</div>
-
-
-<p class="descrever"> <strong>O Que é a Organização Embaixadores do Rei?</strong>
-
-    Embaixadores do Rei ‚ uma organização batista cujas atividades visam os desenvolvimentos físicos, morais e espirituais dos meninos de 9 a 17 anos. É uma organização missionária que procura conduzir os seus membros na participação ativa de Missões. Seu programa abrange: Missões, Mordomia, Evangelização, Recreação e Acampamentos.
-    
-    <strong>Como surgiu a Organização ER?</strong>
-
-    Em 1908, os batistas do Sul dos Estados Unidos se despertaram para a necessidade de criar nas igrejas um ambiente mais apropriado para meninos de 9 a 16 anos. Sentia-se uma carência de melhor atendimento aos interesses e necessidades específicos dessa faixa etária. Da ideia, originou-se a organização Embaixadores do Rei.
-    
-    Porque o Nome Embaixadores do Rei?
-    Um Embaixador é aquele que representa o seu governo em outro pais. A tarefa do Embaixador é interpretar a atitude do seu povo para com o povo de outras nações. Esta ideia é fundamental na organização Embaixadores do Rei. Um verdadeiro Embaixador do Rei zelará pelos interesses do seu Rei Jesus, aqui na terra, e procurará, por todos os meios, mostrar aos outros o que significa ser cristão.
-    
-    ​O nome Embaixadores do Rei (Royal Ambassador), foi inspirado no hino Mensagem Real (The King's Businers). Foi recomendado e aceito como nome oficial para essa organização em maio de 1908. O nome Embaixadores do Rei é usado em vários países do mundo.
-    
-    <strong>​Como a Organização ER chegou ao Brasil?</strong>
-
-    Embaixadores do Rei teve o seu início no Brasil em 1948, graças ao pioneirismo do incansável missionário William Alvin Hatton. A organização contou, inicialmente, com o auxílio da União Feminina Missionária Batista do Brasil, passando desde fevereiro de 1950 a ser promovida pela JUERP (Junta de Educação Religiosa e Publicações) da Convenção Batista Brasileira e a partir de 1978 pela UHBB. Deus tem abençoado sobremaneira a organização Embaixadores do Rei, que cresce ano após ano. O progresso deve-se principalmente aos conselheiros de todos esses anos.
-    ​
-    <strong>O Objetivo da Organização:</strong>
-
-    O objetivo da organização Embaixadores do Rei é desenvolver o caráter cristão dos meninos de tal maneira que se tornem crentes ativos e consagrados, possuídos de um espírito intensamente evangelístico e missionário. Para alcançar o seu objetivo, a organização oferece o seguinte:
-    Um sistema de postos atraente e prático, que ajuda os meninos a conhecerem mais a Bíblia e a obra missionária; Um programa de atividades próprias para os Embaixadores do Rei como Serviço Real, acampamentos e excursões; Vários tipos de reuniões, numa programação agradável e variada.
-
-
-
-</p>
-
-
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Embaixadores do Rei - Embaixada Billy Graham</p>
+            <p>Formando Embaixadores para o Rei Jesus</p>
+        </div>
+    </footer>
 </body>
 </html>
