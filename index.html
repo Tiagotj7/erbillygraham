@@ -1,195 +1,207 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="style.css">
     <script src="animar.js"></script>
 
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-
-    <link rel="shortcut icon" href="icones/html1.ico" type="image/x-icon">
-
-
     <title>Embaixada Billy Graham</title>
-    
+
+    <!-- Font Awesome -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
 </head>
 <body>
-
-
-
-<!--                                    INICIO DO SITE                                         -->
-
-
-<header>
-
-    <div class="geralnav-container">
-
-<div class="logo-container">
-
-
-    <img src="https://iconape.com/wp-content/files/rc/195191/png/marca-er-embaixadores-do-rei-escudo-logo.png" alt="auto">
-
-
-</div>
-
-
-<h1>Embaixada Billy Graham</h1>
-
-
-<div class="nav-top">
-
-
-
-    <div class="a1-container">
-
-    <a href="recursos.html">Recursos</a>
-
-</div>
-
-    <div class="a2-container">
-
-    <a href="https://www.embaixadas.com.br/">Embaixadas</a>
-
-</div>
-
-    <div class="a3-container">
-
-
-    <a href="historia.html">História</a>
-
-</div>
-
-    <div class="a4-container">
-
-
-    <a href="contato.html">Contato</a>
-
-</div>
-
-    <div class="a5-container">
-
-
-    <a href="sobre.html">Sobre</a>
-
-</div>
-
-<!-- Botões do Portal-->
-
-                                                                                                <div class="geralcontent-container">
-    
-    <div class="expansivel-top" onclick="toggleContent('content1')">Portal+</div>
-        <div id="content1" class="content">
-
-                 <div class="subtextos-top">
-
-                         <a href="http://www.denaer.org.br/site/">DENAER</a>
-                         <a href="https://somossiba.com.br/">Igreja Local</a>
-
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="https://iconape.com/wp-content/files/rc/195191/png/marca-er-embaixadores-do-rei-escudo-logo.png" alt="Logo Embaixadores do Rei">
+                    <span class="site-title">Embaixada Billy Graham</span>
                 </div>
-
+                
+                <div class="nav-container">
+                    <div class="hamburger" id="hamburger">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    
+                    <nav class="main-nav" id="mainNav">
+                        <a href="recursos.html">Recursos</a>
+                        <a href="historia.html">História</a>
+                        <a href="contato.html">Contato</a>
+                        <a href="sobre.html">Sobre</a>
+                        
+                        <div class="dropdown">
+                            <button class="dropdown-btn">Portal+ <i class="fas fa-chevron-down"></i></button>
+                            <div class="dropdown-content">
+                                <a href="http://www.denaer.org.br/site/">DENAER</a>
+                                <a href="https://somossiba.com.br/">Igreja Local</a>
+                                <a href="https://www.embaixadas.com.br/">Embaixadas</a>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
         </div>
+    </header>
 
-                <div class="expansivel" onclick="toggleContent('subcontent1')"></div>
-                    <div id="subcontent1" class="subcontent"></div>
-                                                                                                      </div>
-<!-- Botões do Portal-->                                    
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src ="/src/Banner.jpeg" alt="Banner Embaixadores" class="hero-image">
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Embaixada Billy Graham</h1>
+            <p class="hero-subtitle">Formando jovens discípulos e líderes para transformar o mundo</p>
+            <a href="#requisitos" class="hero-btn">Conheça Nossa Missão</a>
+        </div>
+    </section>
 
-</div>
-
-
+    <!-- Requisitos Section -->
+    <section class="requisitos" id="requisitos">
+        <div class="container">
+            <h2 class="section-title">Nossa Visão</h2>
+            
+            <div class="requisitos-grid">
+                <div class="requisito-card">
+                    <div class="requisito-header">
+                        <h3>Tema</h3>
+                    </div>
+                    <div class="requisito-body">
+                        <p>"Somos Embaixadores por Cristo."</p>
+                    </div>
                 </div>
+                
+                <div class="requisito-card">
+                    <div class="requisito-header">
+                        <h3>Divisa</h3>
+                    </div>
+                    <div class="requisito-body">
+                        <p>"De sorte que somos Embaixadores por Cristo, como se Deus por nós vos exortasse. Rogamos-vos, pois, por Cristo que vos reconcilieis com Deus." <strong>II Coríntios 5:20.</strong></p>
+                    </div>
+                </div>
+                
+                <div class="requisito-card">
+                    <div class="requisito-header">
+                        <h3>Missão</h3>
+                    </div>
+                    <div class="requisito-body">
+                        <p>Construir o caráter de meninos e jovens, formando líderes e discípulos que representam o Reino de Deus na terra através de suas vidas, palavras e ações.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-</header>
+    <!-- Quote Section -->
+    <section class="quote-section">
+        <div class="container">
+            <blockquote class="quote">
+                Construindo Meninos Para Não Remendar Homens
+            </blockquote>
+            <p class="quote-author">Frederick Douglass</p>
+        </div>
+    </section>
 
+    <!-- Billy Graham Section -->
+    <section class="billy-section">
+        <div class="container">
+            <h2 class="section-title">Nosso Inspirador</h2>
+            
+            <div class="billy-card">
+                <div class="billy-image">
+                    <img src="src/billygraham.png" alt="Billy Graham">
+                </div>
+                <div class="billy-content">
+                    <h3 class="billy-title">Billy Graham</h3>
+                    <h4 class="billy-subtitle">Um grande embaixador do século XX</h4>
+                    <p class="billy-text">
+                        Billy Graham foi um dos mais influentes evangelistas do século XX, alcançando milhões de pessoas em todo o mundo com sua mensagem de fé, esperança e amor. Sua dedicação a Cristo e seu compromisso com a integridade o tornaram um exemplo para todos os Embaixadores do Rei. Sua vida e ministério continuam a inspirar novas gerações a servir a Deus com excelência e paixão.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="banner">
+    <!-- Compromisso Section -->
+    <section class="compromisso-section">
+        <div class="container">
+            <h2 class="section-title">Nosso Compromisso</h2>
+            
+            <div class="compromisso-content">
+                <p class="compromisso-text">
+                    <strong>Prometo:</strong><br>
+                    <strong>Esforçar-me</strong> por uma vida digna de um EMBAIXADOR DO REI;<br>
+                    <strong>Guardar</strong> meus lábios da mentira, Da impureza e de tomar o nome de Deus em vão;<br>
+                    <strong>Conservar</strong> meu corpo limpo e pronto para o serviço;<br>
+                    <strong>Estudar</strong> a vida de grandes EMBAIXADORES DO REI na palavra de Deus e nos livros missionários;<br>
+                    <strong>Dar</strong> tudo o que puder para o sustento de Missões e, pelo meu trabalho;<br>
+                    <strong>Ajudar</strong> a estabelecer o Reino de Deus na terra.
+                </p>
+                
+                <p class="compromisso-text">
+                    <strong>Prometo (Batizados):</strong><br>
+                    <strong>Ser</strong> leal a Jesus Cristo,<br>
+                    <strong>Viver</strong> para Ele e<br>
+                    <strong>Servi-lo</strong> sempre.<br>
+                    <strong>Terei</strong> uma vida pura;<br>
+                    <strong>Direi</strong> sempre a verdade;<br>
+                    <strong>Corrigirei</strong> os meus erros,<br>
+                    <strong>Seguirei</strong> a Cristo, o Rei,<br>
+                    Se assim não for, Para que nasci?
+                </p>
+                
+                <p class="compromisso-final">
+                    Uma Vez Embaixador, Sempre Embaixador do Rei!!!
+                </p>
+            </div>
+        </div>
+    </section>
 
-        <img src="src/Banner.jpeg">
-
-    </div>
-
-    <div class="requisitos-container">
-
-    <h1>Tema</h1>
-
-    <p>"Somos Embaixadores por Cristo.”</p>
-
-    <h1>Divisa</h1>
-
-    <p>"De sorte que somos Embaixadores por Cristo, como se Deus por nós vos exortasse. Rogamos-vos, pois, por Cristo que vos reconcilieis com Deus." <strong>II Coríntios 5:20.</strong></p>
-
-    <h1>Compromisso</h1>
-
-    <p class="compromisso"><strong>Prometo:</strong>
-
-        <strong>Esforçar-me</strong> por uma vida digna de um EMBAIXADOR DO REI; 
-        <strong>Guardar</strong> meus lábios da mentira, Da impureza e de tomar o nome de Deus em vão; 
-        <strong>Conservar</strong> meu corpo limpo e pronto para o serviço; 
-        <strong>Estudar</strong> a vida de grandes EMBAIXADORES DO REI na palavra de Deus e nos livros missionários; 
-        <strong>Dar</strong> tudo o que puder para o sustento de Missões e, pelo meu trabalho; 
-        <strong>Ajudar</strong> a estabelecer o Reino de Deus na terra.
-        
-        <strong>Prometo:(Batizados)</strong>
-        
-        <strong>Ser</strong> leal a Jesus Cristo, 
-        <strong>Viver</strong> para Ele e 
-        <strong>Servi-lo</strong> sempre.
-        <strong>Terei</strong> uma vida pura; 
-        <strong>Direi</strong> sempre a verdade; 
-        <strong>Corrigirei</strong> os meus erros, 
-        <strong>Seguirei</strong> a Cristo, o Rei, 
-        Se assim não for, Para que nasci?
-
-        <strong>Uma Vez Embaixador, Sempre Embaixador do Rei!!!</strong>
-
-        </p>
-
-    </div>
-
-                    <p class="citar"><strong><q><i>Construindo Meninos Para Não Remendar Homens</i></q></strong>
-                                                   -Frederick Douglass</p>
-
-    
-    <div class="cardbilly">
-
-        <img src="src/billygraham.png">
-
-            <h1>Billy Graham</h1>
-
-            <h2>Um grande embaixador do sec.XX</h2>
-
-
-    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <div class="footer">
-
-        <P>&copy; 2024 Embaixada Billy Graham. Todos os direitos reservados.</P>
-
-    </div>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Embaixada Billy Graham</h3>
+                    <p>Formando jovens discípulos e líderes para transformar o mundo através do amor de Cristo.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Úteis</h3>
+                    <ul class="footer-links">
+                        <li><a href="recursos.html">Recursos</a></li>
+                        <li><a href="historia.html">História</a></li>
+                        <li><a href="contato.html">Contato</a></li>
+                        <li><a href="sobre.html">Sobre</a></li>
+                        <li><a href="https://www.embaixadas.com.br/">Embaixadas</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contato</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-map-marker-alt"></i> Endereço da Embaixada</li>
+                        <li><i class="fas fa-phone"></i> (00) 00000-0000</li>
+                        <li><i class="fas fa-envelope"></i> contato@embaixadabillygraham.org</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2024 Embaixada Billy Graham. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
 
 </body>
 </html>
-
