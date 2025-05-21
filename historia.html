@@ -36,8 +36,8 @@
             top: 0;
             z-index: 100;
         }
-        
-        .faixa-top {
+
+                .faixa-top {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -55,16 +55,63 @@
         .logo-container img {
             height: 60px;
             width: auto;
+            border-radius: 50%;
         }
         
-        .logo-container h1 {
+        .logo-container h2 {
+            color: white;
             font-size: 1.5rem;
-            font-weight: 700;
+            font-weight: 600;
         }
         
-        .main-nav {
+        .main-nav ul {
             display: flex;
+            list-style: none;
             gap: 1.5rem;
+        }
+        
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+        
+        /* Menu Mobile */
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
         }
         
         .container {
@@ -286,10 +333,21 @@
         <div class="faixa-top">
             <div class="logo-container">
                 <img src="src/erlogoapp.png" alt="Logo Embaixadores do Rei">
-                <h1>Embaixada Billy Graham</h1>
+                <h2>Embaixada Billy Graham</h2>
             </div>
-            <nav class="main-nav">
-                <!-- Navigation will go here in future expansion -->
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <nav class="main-nav" id="main-nav">
+                <ul>
+                    <li><a href="#">Início</a></li>
+                    <li><a href="#">Sobre</a></li>
+                    <li><a href="#">Programas</a></li>
+                    <li><a href="#">Eventos</a></li>
+                    <li><a href="#">Contato</a></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -445,3 +503,27 @@
     </footer>
 </body>
 </html>
+<script>
+            // JavaScript para o menu mobile
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            const nav = document.getElementById('main-nav');
+            nav.classList.toggle('active');
+        });
+
+        // Fechar menu quando clicar em um link
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.getElementById('main-nav').classList.remove('active');
+            });
+        });
+
+        // Fechar menu quando clicar fora dele
+        document.addEventListener('click', function(event) {
+            const nav = document.getElementById('main-nav');
+            const toggle = document.getElementById('mobile-menu');
+            
+            if (!nav.contains(event.target) && !toggle.contains(event.target)) {
+                nav.classList.remove('active');
+            }
+        });
+</script>
