@@ -216,6 +216,68 @@
             color: var(--primary);
             font-weight: 600;
         }
+
+        /* Estilos específicos para certificados */
+        .certificado-card {
+            background: var(--light);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+            padding: 1.5rem;
+            position: relative;
+            border: 2px solid transparent;
+            text-align: center;
+        }
+
+        .certificado-card:hover {
+            transform: scale(1.03);
+            border-color: var(--accent);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+        }
+
+        .certificado-card i {
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .certificado-card h3 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .certificado-card .btn-certificado {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.6rem 1.2rem;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            border-radius: 50px;
+            background: linear-gradient(135deg, var(--accent), #d4a617);
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+            outline: none;
+            box-shadow: 0 4px 10px rgba(230, 178, 34, 0.3);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+            gap: 0.5rem;
+        }
+
+        .certificado-card .btn-certificado:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(230, 178, 34, 0.4);
+        }
+
+        .certificado-card .btn-certificado::before {
+            content: "📜";
+            font-size: 1rem;
+        }
         
         .hino-container {
             background: var(--light);
@@ -331,6 +393,14 @@
         section:nth-child(4) {
             animation-delay: 0.3s;
         }
+
+        section:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        section:nth-child(6) {
+            animation-delay: 0.5s;
+        }
         
         /* Responsive Design */
         @media (max-width: 768px) {
@@ -402,6 +472,15 @@
                 padding: 1.5rem;
                 margin-bottom: 2.5rem;
             }
+
+            .certificado-card i {
+                font-size: 2.5rem;
+            }
+
+            .certificado-card .btn-certificado {
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -438,5 +517,14 @@
             
             .section-header h2 {
                 font-size: 1.3rem;
+            }
+
+            .certificado-card i {
+                font-size: 2rem;
+            }
+
+            .certificado-card .btn-certificado {
+                padding: 0.5rem 0.8rem;
+                font-size: 0.75rem;
             }
         }
