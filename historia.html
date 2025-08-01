@@ -4,33 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        <!-- Favicon padrão (16x16 ou 32x32) -->
-<link rel="icon" href="/icones/favicon-32x32.png" type="image/x-icon">
+    <!-- Favicon padrão -->
+    <link rel="icon" href="/icones/favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icones/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icones/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icones/apple-touch-icon.png">
+    <link rel="manifest" href="/icones/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 
-<!-- PNGs em diferentes tamanhos -->
-<link rel="icon" type="image/png" sizes="32x32" href="/icones/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icones/favicon-16x16.png">
-
-<!-- Apple Touch Icon para iOS (180x180 recomendado) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/icones/apple-touch-icon.png">
-
-<!-- Android/Chrome (manifesto para PWA e ícones) -->
-<link rel="manifest" href="/icones/site.webmanifest">
-
-<!-- Microsoft (Windows) -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
-<!-- Cor da barra de endereço no Chrome, Firefox OS e Opera -->
-<meta name="theme-color" content="#ffffff">
-
-<link rel="stylesheet" href="history.css">
-<script src="history.js"></script>
+    <link rel="stylesheet" href="history.css">
+    <script src="history.js"></script>
 
     <title>História dos Embaixadores do Rei</title>
 
 </head>
 <body>
+    <div class="overlay" id="overlay"></div>
     <header>
         <div class="faixa-top">
             <div class="logo-container">
@@ -58,138 +49,76 @@
     </section>
 
     <div class="container">
+        <!-- Início nos EUA -->
         <section class="history-section">
             <h2 class="section-title">O Início nos Estados Unidos</h2>
             <div class="history-content">
                 <p><strong>As Origens da Organização (1883-1908)</strong></p>
-                <p>Tudo começou em 1883. Um grupo de rapazes de 12 a 14 anos, da cidade de Owesboro, Kentucky, nos EUA, costumava se reunir para estudar missões e orar pelos missionários. Pensando assim em missões, o grupo resolveu custear as despesas de uma estudante na escola dirigida pela grande missionária Lottie Moon, em Tengchow, na China.</p>
-                
-                <p>Em outubro de 1907, a União Feminina Missionária da Convenção Batista do Sul dos Estados Unidos montou um Comitê de Trabalho Missionário para meninos. Fannie Heck, presidente da União Feminina Missionária, era a presidente do comitê, a senhorita Heck era outro membro do comitê. A senhorita Elizabeth Briggs, assistiu uma conferência missionária para jovens em Asheville (Carolina do Norte). Lá elas ouviram uma canção, "The King's Business" (Mensagem Real), que falava sobre embaixadores cristãos. Então a senhorita Briggs sugeriu o nome 'Embaixadores' (Ambassadors) para uma organização missionária para meninos, senhorita Heck acrescentou o "do Rei" (Royal).</p>
-                
-                <p>Na 20ª reunião anual da União Feminina Missionária da Convenção Batista do Sul dos Estados Unidos, em maio de 1908, membros da União Feminina Missionária votaram para patrocinar uma organização de missões para meninos de 9 a 16 anos, cujo nome seria 'Royal Ambassadors'. Uma mensageira, Sra. W.M. Petway, estava tão animada com a nova organização que foi correndo para sua igreja para formar a primeira embaixada, que recebeu o nome de Embaixada Carey Newton da Primeira Igreja Batista de Goldsboro, Carolina do Norte.</p>
+                <p>Tudo começou em 1883. Um grupo de rapazes de 12 a 14 anos, da cidade de Owesboro, Kentucky, nos EUA, se reunia para estudar missões e orar pelos missionários. Em outubro de 1907, a União Feminina Missionária criou um Comitê de Trabalho Missionário para meninos e, inspiradas pela canção "The King's Business", sugeriram o nome <em>Royal Ambassadors</em>. Em maio de 1908, foi formalizado o patrocínio à organização missionária para meninos de 9 a 16 anos.</p>
             </div>
         </section>
 
+        <!-- Timeline EUA -->
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">1908</div>
-                <p>Fundação oficial da organização Royal Ambassadors (Embaixadores do Rei) nos Estados Unidos</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1909</div>
-                <p>45 embaixadas já estavam em funcionamento na Convenção Batista do Sul</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1915</div>
-                <p>Crescimento para 500 embaixadas com mais de 4.500 embaixadores</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1917</div>
-                <p>Primeiro acampamento dos Embaixadores do Rei na Praia da Virgínia</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">1933</div>
-                <p>25º aniversário: 4.369 embaixadas com 41.864 embaixadores</p>
-            </div>
+            <div class="timeline-item"><div class="timeline-date">1908</div><p>Fundação da Royal Ambassadors nos EUA</p></div>
+            <div class="timeline-item"><div class="timeline-date">1909</div><p>45 embaixadas em funcionamento</p></div>
+            <div class="timeline-item"><div class="timeline-date">1915</div><p>500 embaixadas e 4.500 embaixadores</p></div>
+            <div class="timeline-item"><div class="timeline-date">1917</div><p>Primeiro acampamento na Praia da Virgínia</p></div>
+            <div class="timeline-item"><div class="timeline-date">1933</div><p>25º aniversário: 41.864 embaixadores</p></div>
         </div>
 
+        <!-- William Alvin Hatton -->
         <section class="history-section">
             <h2 class="section-title">O Pioneiro - William Alvin Hatton</h2>
-            
-            <div class="image-container">
-                <img src="src/alvinhatton.png" alt="William Alvin Hatton">
-            </div>
-            
+            <div class="image-container"><img src="src/alvinhatton.png" alt="William Alvin Hatton"></div>
             <div class="history-content">
-                <p><strong>Nascimento e Vocação</strong></p>
-                <p>Pastor Alvin nasceu no dia 14 de fevereiro de 1920 na cidade do Abilene, no Estado americano do Texas. Seus pais haviam se mudado poucos meses antes, saindo da cidade de Orange, procurando um lugar melhor para a família, saindo de Orange, localidade onde havia muita violência, imoralidade e pouca oferta de ensino em escolas. JOHN MOSES HATTON, seu pai, era diácono.</p>
-                
-                <p>Pastor Alvin relata em seu livro, a sua experiência na embaixada dirigida, segundo suas palavras, por uma extraordinária conselheira de nome R. M. WHITE. Alvin chegou na igreja com seus 10 anos, no momento que ali era organizada a Embaixada na igreja (UNIVERSITY BAPTIST CHURCH), e que acabou recebendo um nome bem familiar: Embaixada William Buck Bagby. Logo nas primeiras reuniões, depois de realizar o treinamento de diretoria com os meninos, Alvin Hatton foi escolhido como Embaixador-Chefe, que apesar de se considerar muito tímido, ficou muito feliz e honrado por ocupar o cargo.</p>
-                
-                <p><strong>O Chamado para a Obra Missionária</strong></p>
-                <p>O desejo de ser missionário foi despertado em um estudo da Embaixada. O estudo realizado foi sobre a vida e obra de DAVID LIVINGSTONE na África, mas na época, Alvin não sabia se queria ser pastor, queria apenas ser "missionário". Ele achava na época que havia muitos pastores batistas por aí, talvez pela impressão de uma criança cercada por pastores.</p>
+                <p><strong>Nascimento e Vocação</strong> – Alvin nasceu em 14/02/1920, em Abilene, Texas. Ainda criança se envolveu com a Embaixada local e foi eleito Embaixador-Chefe aos 10 anos.</p>
+                <p><strong>Chamado Missionário</strong> – Inspirado por estudos como o de David Livingstone, Alvin desejava ser missionário desde a adolescência.</p>
             </div>
         </section>
 
+        <!-- Vinda ao Brasil -->
         <section class="history-section">
             <h2 class="section-title">A Vinda para o Brasil</h2>
-            
-            <div class="image-container">
-                <img src="src/williamalvinhattorBR.png" alt="William Alvin Hatton no Brasil">
-            </div>
-            
+            <div class="image-container"><img src="src/williamalvinhattorBR.png" alt="Hatton no Brasil"></div>
             <div class="history-content">
-                <p><strong>O Chamado para o Campo Brasileiro</strong></p>
-                <p>Mesmo trabalhando intensamente na função de líder dos Embaixadores do Rei no Arkansas, o jovem pastor nunca esqueceu do chamado para a obra missionário no Brasil. Desde 1945, antes mesmo de chegar no Arkansas para o trabalho itinerante, Alvin Hatton pensava muito no campo missionário brasileiro.</p>
-                
-                <p>Dias antes do seu casamento (20 de maio de 1947), o pastor participou de uma reunião da Convenção Batista do Sul dos Estados Unidos na cidade de St. LOUIS. Nessa ocasião seu companheiro de quarto foi J. IVYLOY BISHOP, então Líder Nacional dos ER, que acabava de chegar de uma prolongada visita a vários países da América do Sul. Sabendo do interesse de Alvin Hatton pelo Brasil, Ivyloy encorajou o jovem com coração missionário: - "Alvin, não deve existir um campo missionário no mundo maior e mais maduro do que o Brasil. E meninos ... tem milhares. Os batistas brasileiros estão precisando de Embaixadores do Rei, e pelo menos alguns missionários e pastores mostraram bastante interesse nesse tipo de trabalho".</p>
-                
-                <p><strong>Casamento e Vinda para o Brasil</strong></p>
-                <p>O pastor Alvin Hatton casou-se com Katie (LYDIA CATHERINE JORDAN), moça que conheceu durante o trabalho com colonos japoneses em junho de 1945. O casamento aconteceu na Primeira Igreja Batista em VAN BUREN, Estado de ARKANSAS em 20 de maio de 1947. Foi o pastor da igreja, Pr. T. H. JORDAN, pai de KATIE, que oficiou a cerimônia de casamento.</p>
-                
-                <p>Cinco meses depois, foram nomeados missionários para o Brasil pela Junta de Richmond, mais precisamente em 14 de outubro de 1947. De trem, Katie e Alvin Hatton viajaram de VAN BUREN em ARKANSAS (onde se casaram), para NOVA YORK, onde embarcaram para o Brasil no dia 4 de março de 1948, em um navio cargueiro inglês chamado JAVANESE PRINCE. Depois de 16 dias de viagem o navio JAVANESE PRINCE entrou na BAÍA DE GUANABARA, de madrugada. Alvin fala que tanto ele quanto Katie ficaram impressionados com a beleza da paisagem carioca.</p>
+                <p><strong>Convite Brasileiro</strong> – Em 1947, após reunião em St. Louis, Alvin recebeu incentivo de J. Ivyloy Bishop para atuar no Brasil.</p>
+                <p><strong>Viagem</strong> – Casou-se em 20/05/1947 e embarcou para o Brasil em 04/03/1948 no cargueiro <em>Javanese Prince</em>.</p>
             </div>
         </section>
 
+        <!-- Início no Brasil -->
         <section class="history-section">
             <h2 class="section-title">O Início no Brasil</h2>
             <div class="history-content">
-                <p>A organização teve início no Brasil em 1948, graças ao pioneirismo do incansável missionário americano, pastor William Alvin Hatton. No início, o pastor Alvin Hatton contou com o apoio da União Feminina Missionária Batista do Brasil. Foi através daí que o pastor Alvin conseguiu respaldo denominacional para iniciar embaixadas pelas Igrejas Batistas brasileiras.</p>
-                
-                <p>A primeira embaixada organizada por Alvin Hatton foi a William Buck Bagby, fundada na Igreja Batista da Tijuca, hoje é a Primeira Igreja Batista do Andaraí. Em sua biografia "Pioneering with Royal Ambassadors in Brazil", pastor Alvin relata a história de uma rapaz de 15 anos de nome Paulo Spurgeon de Paula. Ele era estudante no Colégio Batista da Guanabara (hoje conhecido como Colégio Batista Shepard) e gostava muito da organização ER. Bilíngue, ele ajudou o pastor Alvin a superar as dificuldades de comunicação nas primeiras reuniões.</p>
-                
-                <p>O pastor Alvin também relata a participação ativa do pastor David Gomes na implementação do trabalho ER no Brasil. David Gomes pastoreava a Igreja Batista da Tijuca e deu todo o apoio ao trabalho ER. Não por acaso, foi na igreja de David Gomes que foi organizada a primeira embaixada.</p>
+                <p>Em 1948, com apoio da UFMB e da JUERP, Alvin fundou a primeira embaixada na Igreja Batista da Tijuca, liderada por David Gomes, com ajuda de Paulo Spurgeon de Paula.</p>
             </div>
         </section>
 
+        <!-- Timeline Brasil -->
         <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-date">7 de agosto de 1948</div>
-                <p>Primeira reunião na Igreja Batista da Tijuca para implementação dos Embaixadores do Rei no Brasil</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">25 de agosto de 1948</div>
-                <p>Marco oficial da fundação dos Embaixadores do Rei no Brasil</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">25 de fevereiro de 1950</div>
-                <p>Criação do Departamento de Embaixadores do Rei</p>
-            </div>
-            <div class="timeline-item">
-                <div class="timeline-date">Janeiro de 1951</div>
-                <p>Lançamento do primeiro número da revista O Embaixador</p>
-            </div>
+            <div class="timeline-item"><div class="timeline-date">07/08/1948</div><p>Primeira reunião na Tijuca</p></div>
+            <div class="timeline-item"><div class="timeline-date">25/08/1948</div><p>Fundação oficial no Brasil</p></div>
+            <div class="timeline-item"><div class="timeline-date">25/02/1950</div><p>Criação do Departamento de ER</p></div>
+            <div class="timeline-item"><div class="timeline-date">01/1951</div><p>Lançamento da revista <em>O Embaixador</em></p></div>
         </div>
 
+        <!-- Sítio do Sossego -->
         <section class="history-section">
             <h2 class="section-title">O Sítio do Sossego</h2>
-            
-            <div class="image-container">
-                <img src="src/sitiodosossego.png" alt="Sítio do Sossego">
-            </div>
-            
+            <div class="image-container"><img src="src/sitiodosossego.png" alt="Sítio do Sossego"></div>
             <div class="history-content">
-                <p>Sítio do Sossego, hoje reconhecidamente como um dos mais importantes patrimônios da denominação, foi comprado em agosto de 1950 por Alvin Hatton, junto ao Colégio Batista para ser o Acampamento dos Embaixadores do Rei no Brasil. Não há registro da data exata, o desdobramento da compra, averbação e registro aconteceram no mês de agosto.</p>
-                
-                <p>Entre os dias 26 de fevereiro a 01 de março de 1951 aconteceu o 1º Acampamento dos Embaixadores do Rei no Sítio do Sossego, com 18 acampantes representando 3 igrejas. Ainda em 1951, foi realizado o 2º Acampamento de ER no Sítio do Sossego, dessa vez com 35 acampantes de 8 igrejas, de 3 Estados diferentes.</p>
-                
-                <p>Apesar da realização de vários acampamentos no início do Sítio do Sossego, Alvin Hatton considerou o acampamento que foi realizado entre 13 a 18 de julho de 1957, como o 1º Acampamento Nacional de Embaixadores do Rei no Sítio do Sossego, porque segundo ele, havia uma representatividade variada suficiente de Estados que justificava tal título. Depois do Distrito Federal (hoje Cidade do Rio de Janeiro), Minas Gerais foi o Estado mais bem representado (32 acampantes). Estado do Rio e São Paulo também bem representados.</p>
+                <p>Adquirido em agosto de 1950, sediou acampamentos nacionais, destacando o 1º nacional em julho de 1957.</p>
             </div>
         </section>
 
+        <!-- Biografia Download -->
         <section class="history-section">
             <h2 class="section-title">Biografia de William Alvin Hatton</h2>
             <div class="history-content">
-                <p>Conheça mais sobre a vida e ministério do pioneiro dos Embaixadores do Rei no Brasil através da sua biografia completa.</p>
-                
-                <div style="text-align: center; margin-top: 2rem;">
-                    <a href="src/livro_sempre_embaixador_-_biografia_de_william_alvin_hatton.pdf" class="download-btn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" style="margin-right: 8px; vertical-align: text-bottom;" viewBox="0 0 16 16">
-                            <path d="M.5 9.9a.5.5 0 0 1 .5.5v2.5a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-2.5a.5.5 0 0 1 1 0v2.5a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2v-2.5a.5.5 0 0 1 .5-.5z"/>
-                            <path d="M7.646 11.854a.5.5 0 0 0 .708 0l3-3a.5.5 0 0 0-.708-.708L8.5 10.293V1.5a.5.5 0 0 0-1 0v8.793L5.354 8.146a.5.5 0 1 0-.708.708l3 3z"/>
-                        </svg>
-                        Download da Biografia em PDF
-                    </a>
+                <p>Para saber mais, baixe a biografia completa em PDF:</p>
+                <div style="text-align:center; margin-top:1rem;">
+                    <a href="src/livro_sempre_embaixador_-_biografia_de_william_alvin_hatton.pdf" class="download-btn">Download da Biografia</a>
                 </div>
             </div>
         </section>
@@ -201,5 +130,7 @@
             <p>Preservando o legado, inspirando o futuro</p>
         </div>
     </footer>
+    
+
 </body>
 </html>
