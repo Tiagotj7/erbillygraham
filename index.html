@@ -1,37 +1,1083 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon padrão (16x16 ou 32x32) -->
-<link rel="icon" href="/icones/favicon-32x32.png" type="image/x-icon">
-
-<!-- PNGs em diferentes tamanhos -->
-<link rel="icon" type="image/png" sizes="32x32" href="/icones/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="/icones/favicon-16x16.png">
-
-<!-- Apple Touch Icon para iOS (180x180 recomendado) -->
-<link rel="apple-touch-icon" sizes="180x180" href="/icones/apple-touch-icon.png">
-
-<!-- Android/Chrome (manifesto para PWA e ícones) -->
-<link rel="manifest" href="/icones/site.webmanifest">
-
-<!-- Microsoft (Windows) -->
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/mstile-144x144.png">
-
-<!-- Cor da barra de endereço no Chrome, Firefox OS e Opera -->
-<meta name="theme-color" content="#ffffff">
-
-
-    <link rel="stylesheet" href="style.css">
-    <script src="animar.js"></script>
-
     <title>Embaixada Billy Graham</title>
-
+    
     <!-- Font Awesome -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/icones/favicon-32x32.png" type="image/x-icon">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icones/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icones/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icones/apple-touch-icon.png">
+    <link rel="manifest" href="/icones/site.webmanifest">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    
+    <style>
+        :root {
+            --primary-color: #003767;
+            --secondary-color: #bf9b30;
+            --accent-color: #e63946;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --header-bg: #001f3f;
+            --dark: #212529;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* Animações */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes fadeInRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes glow {
+            0%, 100% {
+                box-shadow: 0 0 5px rgba(191, 155, 48, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 20px rgba(191, 155, 48, 0.8);
+            }
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        @keyframes slideInfinite {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        @keyframes expandWidth {
+            from { width: 0; }
+            to { width: 100px; }
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            animation: fadeInLeft 1s ease-out;
+        }
+        
+        .logo-container img {
+            width: 60px;
+            height: auto;
+            filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.5));
+            transition: all 0.3s ease;
+            animation: bounceIn 1.2s ease-out;
+        }
+
+        .logo-container img:hover {
+            transform: scale(1.1) rotate(5deg);
+            animation: glow 2s infinite;
+        }
+        
+        .site-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            animation: fadeInLeft 1s ease-out 0.3s both;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            position: relative;
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            z-index: 1001;
+            padding: 0.5rem;
+        }
+        
+        .hamburger span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 3px 0;
+            transition: 0.3s;
+            transform-origin: center;
+        }
+        
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(6px, 6px);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+        }
+        
+        .main-nav {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            animation: fadeInRight 1s ease-out;
+        }
+
+        .main-nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0.75rem;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .main-nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .main-nav a:hover::before {
+            left: 100%;
+        }
+        
+        .main-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .main-nav a:hover {
+            color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .main-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Dropdown */
+        .dropdown {
+            position: relative;
+        }
+        
+        .dropdown-btn {
+            color: white;
+            padding: 0.5rem 0.75rem;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 1rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-btn:hover {
+            color: var(--secondary-color);
+        }
+        
+        .dropdown-btn i {
+            transition: transform 0.3s ease;
+        }
+        
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            min-width: 200px;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 8px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            z-index: 1000;
+            overflow: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-content a {
+            color: var(--dark);
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            transition: all 0.3s ease;
+        }
+        
+        .dropdown-content a:hover {
+            background-color: rgba(26, 59, 114, 0.1);
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .dropdown:hover .dropdown-content {
+            display: block;
+            transform: translateY(0);
+        }
+        
+        .dropdown:hover .dropdown-btn i {
+            transform: rotate(180deg);
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 80vh;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
+            z-index: 2;
+        }
+        
+        .hero-content {
+            color: white;
+            text-align: center;
+            max-width: 800px;
+            padding: 2rem;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out;
+            background: linear-gradient(45deg, #fff, var(--secondary-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            animation: fadeInUp 1s ease-out 0.3s forwards;
+        }
+        
+        .hero-btn {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--accent-color), #c1272d);
+            color: white;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            text-decoration: none;
+            display: inline-block;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+            opacity: 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .hero-btn:hover::before {
+            left: 100%;
+        }
+        
+        .hero-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+        }
+
+        /* Cards Section */
+        .cards-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #ffffff, #f5f7fa);
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            position: relative;
+            padding-bottom: 1rem;
+            animation: scaleIn 1.2s ease-out;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            animation: expandWidth 1.5s ease-out 0.5s forwards;
+            border-radius: 2px;
+        }
+
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        
+        .card {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: scale(0.8);
+            animation: scaleIn 1s ease-out forwards;
+            position: relative;
+        }
+
+        .card:nth-child(1) { animation-delay: 0.1s; }
+        .card:nth-child(2) { animation-delay: 0.2s; }
+        .card:nth-child(3) { animation-delay: 0.3s; }
+
+        .card::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            transition: width 0.4s ease;
+        }
+
+        .card:hover::after {
+            width: 100%;
+        }
+        
+        .card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .card-header {
+            background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
+            color: white;
+            padding: 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            animation: rotate 15s linear infinite;
+        }
+
+        .card-header h3 {
+            font-size: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .card-icon {
+            font-size: 3rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            transition: all 0.3s ease;
+            animation: bounceIn 1.5s ease-out;
+        }
+
+        .card:hover .card-icon {
+            transform: scale(1.2) rotateY(180deg);
+            animation: pulse 1.5s infinite;
+        }
+        
+        .card-body {
+            padding: 2rem;
+        }
+        
+        .card-body p {
+            color: var(--text-color);
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Features Section */
+        .features-section {
+            padding: 5rem 0;
+            background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .features-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--secondary-color));
+            animation: slideInfinite 3s linear infinite;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 2rem;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .feature-item:nth-child(1) { animation-delay: 0.1s; }
+        .feature-item:nth-child(2) { animation-delay: 0.2s; }
+        .feature-item:nth-child(3) { animation-delay: 0.3s; }
+        .feature-item:nth-child(4) { animation-delay: 0.4s; }
+
+        .feature-item:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .feature-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        /* Billy Graham Section */
+        .billy-section {
+            padding: 5rem 0;
+            background: linear-gradient(to bottom, #f5f7fa, #ffffff);
+        }
+
+        .billy-card {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 3rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .billy-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .billy-image {
+            flex: 1;
+            min-width: 300px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .billy-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .billy-card:hover .billy-image img {
+            transform: scale(1.05);
+        }
+
+        .billy-content {
+            flex: 2;
+            padding: 3rem;
+        }
+
+        .billy-title {
+            font-size: 2.2rem;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .billy-subtitle {
+            color: var(--secondary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        .billy-text {
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* Compromisso Section */
+        .compromisso-section {
+            padding: 5rem 0;
+            background: var(--light-bg);
+        }
+
+        .compromisso-content {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .compromisso-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 3rem;
+        }
+
+        .compromisso-column h3 {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            font-size: 1.4rem;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+        }
+
+        .compromisso-text {
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+
+        .compromisso-text strong {
+            color: var(--primary-color);
+        }
+
+        .compromisso-final {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        /* CTA Section */
+        .cta-section {
+            text-align: center;
+            margin: 5rem 0;
+            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--light-bg), #e9ecef);
+            border-radius: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(191, 155, 48, 0.1) 0%, transparent 50%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        .cta-section h2 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            animation: bounceIn 1.2s ease-out;
+            position: relative;
+            z-index: 1;
+        }
+
+        .cta-section p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            color: var(--text-color);
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease-out 0.3s both;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: linear-gradient(135deg, var(--accent-color), #c1272d);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.4s ease;
+            animation: pulse 2s infinite;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+            animation: none;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, var(--dark), #343a40);
+            color: white;
+            padding: 4rem 0 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color), var(--secondary-color));
+            animation: slideInfinite 3s linear infinite;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+            padding-bottom: 0.75rem;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+            bottom: 0;
+            left: 0;
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ccc;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .social-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--secondary-color), var(--accent-color));
+            color: white;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 20px rgba(191, 155, 48, 0.4);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.95rem;
+            color: #aaa;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+
+            .billy-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .billy-image {
+                min-width: 100%;
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .main-nav {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
+                flex-direction: column;
+                justify-content: center;
+                gap: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease-in-out;
+                z-index: 999;
+            }
+            
+            .main-nav.active {
+                transform: translateX(0);
+            }
+            
+            .main-nav a {
+                font-size: 1.3rem;
+                padding: 1rem;
+            }
+
+            .dropdown-content {
+                position: static;
+                display: block;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: none;
+                border-radius: 8px;
+                margin-top: 1rem;
+                transform: none;
+            }
+
+            .dropdown-content a {
+                color: white;
+                padding: 0.8rem 1.5rem;
+            }
+
+            .dropdown-content a:hover {
+                background-color: rgba(255, 255, 255, 0.1);
+                color: var(--secondary-color);
+            }
+            
+            .hero {
+                height: 70vh;
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .cards-container {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            }
+            
+            .section-title {
+                font-size: 2.2rem;
+            }
+            
+            .container {
+                padding: 0 1rem;
+            }
+
+            .compromisso-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .billy-content {
+                padding: 2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .hero-btn {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .card-header {
+                padding: 1.5rem;
+            }
+            
+            .card-body {
+                padding: 1.5rem;
+            }
+            
+            .cta-section {
+                padding: 3rem 1rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+
+            .compromisso-content {
+                padding: 2rem;
+            }
+
+            .billy-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Header -->
@@ -39,7 +1085,7 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo-container">
-                    <img src="src/erlogoapp.png">
+                    <img src="src/erlogoapp.png" alt="Logo Embaixadores do Rei">
                     <span class="site-title">Embaixada Billy Graham</span>
                 </div>
                 
@@ -51,6 +1097,7 @@
                     </div>
                     
                     <nav class="main-nav" id="mainNav">
+                        <a href="index.html">Início</a>
                         <a href="recursos.html">Recursos</a>
                         <a href="historia.html">História</a>
                         <a href="sobre.html">Sobre</a>
@@ -58,9 +1105,9 @@
                         <div class="dropdown">
                             <button class="dropdown-btn">Portal+ <i class="fas fa-chevron-down"></i></button>
                             <div class="dropdown-content">
-                                <a href="http://www.denaer.org.br/site/">DENAER</a>
-                                <a href="https://somossiba.com.br/">Igreja Local</a>
-                                <a href="https://www.embaixadas.com.br/">Embaixadas</a>
+                                <a href="http://www.denaer.org.br/site/" target="_blank">DENAER</a>
+                                <a href="https://somossiba.com.br/" target="_blank">Igreja Local</a>
+                                <a href="https://www.embaixadas.com.br/" target="_blank">Embaixadas</a>
                             </div>
                         </div>
                     </nav>
@@ -70,46 +1117,58 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
-        <img src ="/src/Banner.jpeg" alt="Banner Embaixadores" class="hero-image">
+    <section class="hero" id="inicio">
+        <img src="src/Banner.jpeg" alt="Banner Embaixadores" class="hero-image">
         <div class="overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Embaixada Billy Graham</h1>
-            <p class="hero-subtitle">Formando jovens discípulos e líderes para transformar o mundo</p>
-            <a href="#requisitos" class="hero-btn">Conheça Nossa Missão</a>
+            <p class="hero-subtitle">Formando jovens discípulos e líderes para transformar o mundo através do amor de Cristo</p>
+            <a href="#cards" class="hero-btn">Conheça Nossa Missão</a>
         </div>
     </section>
 
-    <!-- Requisitos Section -->
-    <section class="requisitos" id="requisitos">
+    <!-- Cards Section -->
+    <section class="cards-section" id="cards">
         <div class="container">
             <h2 class="section-title">Nossa Visão</h2>
             
-            <div class="requisitos-grid">
-                <div class="requisito-card">
-                    <div class="requisito-header">
+            <div class="cards-container">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
                         <h3>Tema</h3>
                     </div>
-                    <div class="requisito-body">
+                    <div class="card-body">
                         <p>"Somos Embaixadores por Cristo."</p>
+                        <p>Este é o fundamento da nossa identidade como organização, representando o Reino de Deus na terra através de nossas vidas e testemunho.</p>
                     </div>
                 </div>
                 
-                <div class="requisito-card">
-                    <div class="requisito-header">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-bible"></i>
+                        </div>
                         <h3>Divisa</h3>
                     </div>
-                    <div class="requisito-body">
-                        <p>"De sorte que somos Embaixadores por Cristo, como se Deus por nós vos exortasse. Rogamos-vos, pois, por Cristo que vos reconcilieis com Deus." <strong>II Coríntios 5:20.</strong></p>
+                    <div class="card-body">
+                        <p>"De sorte que somos Embaixadores por Cristo, como se Deus por nós vos exortasse. Rogamos-vos, pois, por Cristo que vos reconcilieis com Deus." <strong>II Coríntios 5:20</strong></p>
+                        <p>Nossa base bíblica que nos orienta em cada ação e decisão como embaixadores do Reino.</p>
                     </div>
                 </div>
                 
-                <div class="requisito-card">
-                    <div class="requisito-header">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-target"></i>
+                        </div>
                         <h3>Missão</h3>
                     </div>
-                    <div class="requisito-body">
+                    <div class="card-body">
                         <p>Construir o caráter de meninos e jovens, formando líderes e discípulos que representam o Reino de Deus na terra através de suas vidas, palavras e ações.</p>
+                        <p>Desenvolvemos programas que promovem crescimento espiritual, físico e moral.</p>
                     </div>
                 </div>
             </div>
@@ -117,12 +1176,50 @@
     </section>
 
     <!-- Quote Section -->
-    <section class="quote-section">
+    <section class="features-section">
         <div class="container">
-            <blockquote class="quote">
-                Construindo Meninos Para Não Remendar Homens
-            </blockquote>
-            <p class="quote-author">Frederick Douglass</p>
+            <div style="text-align: center; margin-bottom: 3rem;">
+                <blockquote style="font-size: 2.5rem; font-style: italic; margin-bottom: 1rem; position: relative;">
+                    "Construindo Meninos Para Não Remendar Homens"
+                </blockquote>
+                <p style="font-size: 1.2rem; opacity: 0.9;">Frederick Douglass</p>
+            </div>
+            
+            <h2 class="section-title" style="color: white;">Nossos Pilares</h2>
+            
+            <div class="features-grid">
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-globe-americas"></i>
+                    </div>
+                    <h3>Missões</h3>
+                    <p>Participação ativa na obra missionária, sensibilizando os jovens para levar a mensagem do evangelho a todos os povos.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3>Mordomia</h3>
+                    <p>Ensinamentos sobre o uso responsável dos recursos, talentos e tempo que Deus nos confiou.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullhorn"></i>
+                    </div>
+                    <h3>Evangelização</h3>
+                    <p>Preparação dos jovens para compartilhar sua fé e testemunhar de Cristo em seu dia a dia.</p>
+                </div>
+                
+                <div class="feature-item">
+                    <div class="feature-icon">
+                        <i class="fas fa-campground"></i>
+                    </div>
+                    <h3>Acampamentos</h3>
+                    <p>Experiências ao ar livre que promovem comunhão, aprendizado bíblico e desenvolvimento de habilidades.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -152,32 +1249,50 @@
             <h2 class="section-title">Nosso Compromisso</h2>
             
             <div class="compromisso-content">
-                <p class="compromisso-text">
-                    <strong>Prometo:</strong><br>
-                    <strong>Esforçar-me</strong> por uma vida digna de um EMBAIXADOR DO REI;<br>
-                    <strong>Guardar</strong> meus lábios da mentira, Da impureza e de tomar o nome de Deus em vão;<br>
-                    <strong>Conservar</strong> meu corpo limpo e pronto para o serviço;<br>
-                    <strong>Estudar</strong> a vida de grandes EMBAIXADORES DO REI na palavra de Deus e nos livros missionários;<br>
-                    <strong>Dar</strong> tudo o que puder para o sustento de Missões e, pelo meu trabalho;<br>
-                    <strong>Ajudar</strong> a estabelecer o Reino de Deus na terra.
-                </p>
+                <div class="compromisso-grid">
+                    <div class="compromisso-column">
+                        <h3>Prometo:</h3>
+                        <div class="compromisso-text">
+                            <p><strong>Esforçar-me</strong> por uma vida digna de um EMBAIXADOR DO REI;</p>
+                            <p><strong>Guardar</strong> meus lábios da mentira, da impureza e de tomar o nome de Deus em vão;</p>
+                            <p><strong>Conservar</strong> meu corpo limpo e pronto para o serviço;</p>
+                            <p><strong>Estudar</strong> a vida de grandes EMBAIXADORES DO REI na palavra de Deus e nos livros missionários;</p>
+                            <p><strong>Dar</strong> tudo o que puder para o sustento de Missões e, pelo meu trabalho;</p>
+                            <p><strong>Ajudar</strong> a estabelecer o Reino de Deus na terra.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="compromisso-column">
+                        <h3>Prometo (Batizados):</h3>
+                        <div class="compromisso-text">
+                            <p><strong>Ser</strong> leal a Jesus Cristo,</p>
+                            <p><strong>Viver</strong> para Ele e</p>
+                            <p><strong>Servi-lo</strong> sempre.</p>
+                            <p><strong>Terei</strong> uma vida pura;</p>
+                            <p><strong>Direi</strong> sempre a verdade;</p>
+                            <p><strong>Corrigirei</strong> os meus erros,</p>
+                            <p><strong>Seguirei</strong> a Cristo, o Rei,</p>
+                            <p style="font-style: italic; color: var(--accent-color);">Se assim não for, Para que nasci?</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <p class="compromisso-text">
-                    <strong>Prometo (Batizados):</strong><br>
-                    <strong>Ser</strong> leal a Jesus Cristo,<br>
-                    <strong>Viver</strong> para Ele e<br>
-                    <strong>Servi-lo</strong> sempre.<br>
-                    <strong>Terei</strong> uma vida pura;<br>
-                    <strong>Direi</strong> sempre a verdade;<br>
-                    <strong>Corrigirei</strong> os meus erros,<br>
-                    <strong>Seguirei</strong> a Cristo, o Rei,<br>
-                    Se assim não for, Para que nasci?
-                </p>
-                
-                <p class="compromisso-final">
+                <div class="compromisso-final">
                     Uma Vez Embaixador, Sempre Embaixador do Rei!!!
-                </p>
+                </div>
             </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <div class="container">
+            <h2>Faça Parte Desta História</h2>
+            <p>A organização Embaixadores do Rei continua transformando vidas de jovens por todo o Brasil, formando líderes cristãos comprometidos com os valores do Reino de Deus.</p>
+            <a href="https://wa.link/gujtci" class="cta-button" target="_blank">
+                <i class="fab fa-whatsapp" style="margin-right: 0.5rem;"></i>
+                Saiba Como Participar
+            </a>
         </div>
     </section>
 
@@ -187,40 +1302,149 @@
             <div class="footer-content">
                 <div class="footer-column">
                     <h3>Embaixada Billy Graham</h3>
-                    <p>Formando jovens discípulos e líderes para transformar o mundo através do amor de Cristo.</p>
+                    <p style="margin-bottom: 1.5rem; line-height: 1.6;">Formando jovens discípulos e líderes para transformar o mundo através do amor de Cristo.</p>
                     <div class="social-links">
-                        <a href="https://www.facebook.com/somossiba" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                        <a href="https://www.instagram.com/er.billygraham/" class="social-icon"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.youtube.com/@EmbaixadaBillyGraham" class="social-icon"><i class="fab fa-youtube"></i></a>
-                        <a href="https://wa.link/gujtci" class="social-icon"><i class="fab fa-whatsapp"></i></a>
+                        <a href="https://www.facebook.com/somossiba" class="social-icon" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/er.billygraham/" class="social-icon" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://www.youtube.com/@EmbaixadaBillyGraham" class="social-icon" target="_blank">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://wa.link/gujtci" class="social-icon" target="_blank">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
                     </div>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Links Úteis</h3>
                     <ul class="footer-links">
-                        <li><a href="recursos.html">Recursos</a></li>
-                        <li><a href="historia.html">História</a></li>
-                        <li><a href="sobre.html">Sobre</a></li>
-                        <li><a href="https://www.embaixadas.com.br/">Embaixadas</a></li>
+                        <li><a href="recursos.html"><i class="fas fa-book"></i> Recursos</a></li>
+                        <li><a href="historia.html"><i class="fas fa-history"></i> História</a></li>
+                        <li><a href="sobre.html"><i class="fas fa-info-circle"></i> Sobre</a></li>
+                        <li><a href="https://www.embaixadas.com.br/" target="_blank"><i class="fas fa-external-link-alt"></i> Embaixadas</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-column">
                     <h3>Contato</h3>
                     <ul class="footer-links">
-                        <li><i class="fas fa-map-marker-alt"></i> Tv.Tupi Caldas - Santa Terezinha</li>
-                        <li><i class="fas fa-phone"></i> (75) 99945-0485</li>
-                        <li><i class="fas fa-envelope"></i> contato@embaixadabillygraham.org</li>
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Tv.Tupi Caldas - Santa Terezinha</a></li>
+                        <li><a href="https://wa.link/gujtci"><i class="fas fa-phone"></i> (75) 99945-0485</a></li>
+                        <li><a href="mailto:contato@embaixadabillygraham.org"><i class="fas fa-envelope"></i> contato@embaixadabillygraham.org</a></li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                <p>&copy; 2025 Embaixada Billy Graham. Todos os direitos reservados.</p>
+                <p>&copy; 2025 Embaixada Billy Graham. Todos os direitos reservados. | Formando Embaixadores para o Rei Jesus</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const mainNav = document.getElementById('mainNav');
+            const body = document.body;
+            
+            hamburger.addEventListener('click', function() {
+                mainNav.classList.toggle('active');
+                hamburger.classList.toggle('active');
+                body.style.overflow = mainNav.classList.contains('active') ? 'hidden' : 'auto';
+            });
+            
+            // Close menu when clicking on a link
+            document.querySelectorAll('.main-nav a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mainNav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    body.style.overflow = 'auto';
+                });
+            });
+            
+            // Close menu when clicking outside
+            document.addEventListener('click', function(event) {
+                const isClickInsideNav = mainNav.contains(event.target);
+                const isClickInsideHamburger = hamburger.contains(event.target);
+                
+                if (!isClickInsideNav && !isClickInsideHamburger && mainNav.classList.contains('active')) {
+                    mainNav.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    body.style.overflow = 'auto';
+                }
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight;
+                        
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // Reveal animations on scroll
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, observerOptions);
+            
+            // Observe elements for animation
+            const elementsToObserve = document.querySelectorAll('.card, .feature-item, .billy-card, .compromisso-content');
+            elementsToObserve.forEach(el => {
+                observer.observe(el);
+            });
+            
+            // Parallax effect for hero section
+            window.addEventListener('scroll', function() {
+                const scrolled = window.pageYOffset;
+                const hero = document.querySelector('.hero');
+                const heroContent = document.querySelector('.hero-content');
+                const heroImage = document.querySelector('.hero-image');
+                
+                if (hero && heroContent && heroImage) {
+                    const heroHeight = hero.offsetHeight;
+                    const scrollPercentage = scrolled / heroHeight;
+                    
+                    if (scrollPercentage < 1) {
+                        heroContent.style.transform = `translateY(${scrolled * 0.5}px)`;
+                        heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    }
+                }
+            });
+            
+            // Add loading animation
+            window.addEventListener('load', function() {
+                document.body.style.opacity = '1';
+                document.body.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
 </body>
 </html>
