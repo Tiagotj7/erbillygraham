@@ -1,10 +1,10 @@
         :root {
-            --primary-color: #003767;
-            --secondary-color: #bf9b30;
-            --accent-color: #e63946;
+            --primary-color: #002868;
+            --secondary-color: #f2c230;
+            --accent-color: #ffd700;
             --text-color: #333;
             --light-bg: #f8f9fa;
-            --header-bg: #001f3f;
+            --header-bg: #00102b;
             --dark: #212529;
         }
         
@@ -108,10 +108,10 @@
 
         @keyframes glow {
             0%, 100% {
-                box-shadow: 0 0 5px rgba(191, 155, 48, 0.5);
+                box-shadow: 0 0 5px rgba(242, 194, 48, 0.5);
             }
             50% {
-                box-shadow: 0 0 20px rgba(191, 155, 48, 0.8);
+                box-shadow: 0 0 20px rgba(242, 194, 48, 0.8);
             }
         }
 
@@ -394,8 +394,8 @@
         
         .hero-btn {
             padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--accent-color), #c1272d);
-            color: white;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--header-bg);
             border: none;
             border-radius: 50px;
             font-size: 1.1rem;
@@ -427,7 +427,7 @@
         
         .hero-btn:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+            box-shadow: 0 15px 30px rgba(242, 194, 48, 0.45);
         }
 
         /* Cards Section */
@@ -746,7 +746,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: radial-gradient(circle, rgba(191, 155, 48, 0.1) 0%, transparent 50%);
+            background: radial-gradient(circle, rgba(242, 194, 48, 0.1) 0%, transparent 50%);
             animation: rotate 20s linear infinite;
         }
         
@@ -772,8 +772,8 @@
         .cta-button {
             display: inline-block;
             padding: 1.2rem 3rem;
-            background: linear-gradient(135deg, var(--accent-color), #c1272d);
-            color: white;
+            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+            color: var(--header-bg);
             border-radius: 50px;
             text-decoration: none;
             font-weight: bold;
@@ -802,7 +802,7 @@
         
         .cta-button:hover {
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(230, 57, 70, 0.4);
+            box-shadow: 0 15px 30px rgba(242, 194, 48, 0.45);
             animation: none;
         }
 
@@ -894,7 +894,7 @@
         
         .social-icon:hover {
             transform: translateY(-5px) scale(1.1);
-            box-shadow: 0 10px 20px rgba(191, 155, 48, 0.4);
+            box-shadow: 0 10px 20px rgba(242, 194, 48, 0.4);
         }
         
         .copyright {

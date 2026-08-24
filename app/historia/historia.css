@@ -1,10 +1,10 @@
         :root {
-            --primary-color: #003767;
-            --secondary-color: #bf9b30;
-            --accent-color: #e63946;
+            --primary-color: #002868;
+            --secondary-color: #f2c230;
+            --accent-color: #ffd700;
             --text-color: #333;
             --light-bg: #f8f9fa;
-            --header-bg: #001f3f;
+            --header-bg: #00102b;
         }
         
         * {
@@ -107,10 +107,10 @@
 
         @keyframes glow {
             0%, 100% {
-                box-shadow: 0 0 5px rgba(191, 155, 48, 0.5);
+                box-shadow: 0 0 5px rgba(242, 194, 48, 0.5);
             }
             50% {
-                box-shadow: 0 0 20px rgba(191, 155, 48, 0.8);
+                box-shadow: 0 0 20px rgba(242, 194, 48, 0.8);
             }
         }
 
@@ -509,9 +509,9 @@
         }
         
         .download-btn:hover {
-            background-color: #002244;
+            background-color: #00184a;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 10px 25px rgba(0, 55, 103, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 40, 104, 0.4);
             animation: none;
         }
 
