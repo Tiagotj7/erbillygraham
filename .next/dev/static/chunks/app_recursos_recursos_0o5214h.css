@@ -1,15 +1,4 @@
 /* [project]/app/recursos/recursos.css [app-client] (css) */
-:root {
-  --primary-color: #002868;
-  --secondary-color: #f2c230;
-  --accent-color: gold;
-  --text-color: #333;
-  --light-bg: #f8f9fa;
-  --header-bg: #00102b;
-  --light: #fff;
-  --gray-light: #e9ecef;
-}
-
 * {
   box-sizing: border-box;
   margin: 0;
@@ -19,7 +8,7 @@
 
 body {
   color: var(--text-color);
-  background-color: var(--light-bg);
+  background-color: var(--bg);
   line-height: 1.6;
   overflow-x: hidden;
 }
@@ -248,44 +237,29 @@ header {
   padding: .5rem 0;
   font-weight: 500;
   text-decoration: none;
-  transition: all .3s;
+  transition: color .2s;
   position: relative;
-  overflow: hidden;
-}
-
-.main-nav a:before {
-  content: "";
-  background: linear-gradient(90deg, #0000, #fff3, #0000);
-  width: 100%;
-  height: 100%;
-  transition: left .5s;
-  position: absolute;
-  top: 0;
-  left: -100%;
-}
-
-.main-nav li:hover a:before {
-  left: 100%;
 }
 
 .main-nav a:after {
   content: "";
   background-color: var(--secondary-color);
-  width: 0;
+  transform-origin: center;
   height: 2px;
-  transition: width .3s;
+  transition: transform .2s;
   position: absolute;
   bottom: 0;
   left: 0;
+  right: 0;
+  transform: scaleX(0);
 }
 
-.main-nav li:hover a {
+.main-nav a:hover {
   color: var(--secondary-color);
-  transform: translateY(-2px);
 }
 
-.main-nav li:hover a:after {
-  width: 100%;
+.main-nav a:hover:after {
+  transform: scaleX(1);
 }
 
 .menu-toggle {

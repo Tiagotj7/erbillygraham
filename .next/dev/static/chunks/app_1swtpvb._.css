@@ -81,7 +81,6 @@ html, body {
 .theme-toggle:hover {
   border-color: var(--secondary-color);
   background: #f2c23033;
-  transform: translateY(-2px);
 }
 
 .theme-toggle svg {

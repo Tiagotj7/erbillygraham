@@ -63,7 +63,6 @@ body {
 .theme-toggle:hover {
   background: rgba(242, 194, 48, 0.2);
   border-color: var(--secondary-color);
-  transform: translateY(-2px);
 }
 
 .theme-toggle svg {
