@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import ThemeToggle from "./ThemeToggle";
 
 type PageKey = "recursos" | "historia" | "sobre";
 
@@ -66,30 +67,35 @@ export default function SiteHeader({ current }: { current: PageKey }) {
             <img src="/assets/erlogoapp.png" alt="Logo Embaixadores do Rei" />
             <h2>Embaixada Billy Graham</h2>
           </div>
-          <div
-            className={`menu-toggle${menuOpen ? " active" : ""}`}
-            onClick={() => setMenuOpen((v) => !v)}
-          >
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-          <nav className={`main-nav${menuOpen ? " active" : ""}`}>
-            <ul>
-              <li>
-                <Link href="/" onClick={closeMenu}>
-                  Início
-                </Link>
-              </li>
-              {links.map((link) => (
-                <li key={link.key}>
-                  <Link href={link.href} onClick={closeMenu}>
-                    {link.label}
+
+          <div className="nav-actions">
+            <div
+              className={`menu-toggle${menuOpen ? " active" : ""}`}
+              onClick={() => setMenuOpen((v) => !v)}
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+            <nav className={`main-nav${menuOpen ? " active" : ""}`}>
+              <ul>
+                <li>
+                  <Link href="/" onClick={closeMenu}>
+                    Início
                   </Link>
                 </li>
-              ))}
-            </ul>
-          </nav>
+                {links.map((link) => (
+                  <li key={link.key}>
+                    <Link href={link.href} onClick={closeMenu}>
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
+            <ThemeToggle />
+          </div>
         </div>
       </header>
     </>

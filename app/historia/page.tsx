@@ -33,12 +33,15 @@ export default function HistoriaPage() {
     <>
       <SiteHeader current="historia" />
 
-      <section className="hero">
-        <h1>História dos Embaixadores do Rei</h1>
-        <p>
-          Uma jornada através do tempo: conhecendo as raízes e o legado de
-          uma organização centenária
-        </p>
+      <section className="page-hero">
+        <div className="page-hero__inner">
+          <span className="page-hero__badge">Nossa trajetória</span>
+          <h1>História dos Embaixadores do Rei</h1>
+          <p>
+            Uma jornada através do tempo: conhecendo as raízes e o legado de
+            uma organização centenária
+          </p>
+        </div>
       </section>
 
       <div className="container">

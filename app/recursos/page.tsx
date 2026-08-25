@@ -46,6 +46,17 @@ export default function RecursosPage() {
     <>
       <SiteHeader current="recursos" />
 
+      <section className="page-hero">
+        <div className="page-hero__inner">
+          <span className="page-hero__badge">Materiais e apoio</span>
+          <h1>Recursos</h1>
+          <p>
+            Manuais, certificados e materiais de apoio para conselheiros,
+            embaixadores e famílias.
+          </p>
+        </div>
+      </section>
+
       <main>
         <section>
           <div className="section-header">

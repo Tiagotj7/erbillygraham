@@ -1,11 +1,11 @@
 /* [project]/app/recursos/recursos.css [app-client] (css) */
 :root {
-  --primary-color: #003767;
-  --secondary-color: #bf9b30;
-  --accent-color: #e63946;
+  --primary-color: #002868;
+  --secondary-color: #f2c230;
+  --accent-color: gold;
   --text-color: #333;
   --light-bg: #f8f9fa;
-  --header-bg: #001f3f;
+  --header-bg: #00102b;
   --light: #fff;
   --gray-light: #e9ecef;
 }
@@ -119,11 +119,11 @@ body {
 
 @keyframes glow {
   0%, 100% {
-    box-shadow: 0 0 5px #bf9b3080;
+    box-shadow: 0 0 5px #f2c23080;
   }
 
   50% {
-    box-shadow: 0 0 20px #bf9b30cc;
+    box-shadow: 0 0 20px #f2c230cc;
   }
 }
 
@@ -159,14 +159,14 @@ body {
 }
 
 header {
-  background-color: var(--header-bg);
+  background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
   color: #fff;
   z-index: 1000;
   padding: 1rem 0;
   animation: .8s ease-out fadeInUp;
   position: sticky;
   top: 0;
-  box-shadow: 0 4px 6px #0000001a;
+  box-shadow: 0 4px 12px #00000026;
 }
 
 .faixa-top {
@@ -209,6 +209,12 @@ header {
   font-size: 1.2rem;
   font-weight: 600;
   animation: 1s ease-out .3s both fadeInLeft;
+}
+
+.nav-actions {
+  align-items: center;
+  gap: 1.25rem;
+  display: flex;
 }
 
 .main-nav {
@@ -258,7 +264,7 @@ header {
   left: -100%;
 }
 
-.main-nav a:hover:before {
+.main-nav li:hover a:before {
   left: 100%;
 }
 
@@ -273,12 +279,12 @@ header {
   left: 0;
 }
 
-.main-nav a:hover {
+.main-nav li:hover a {
   color: var(--secondary-color);
   transform: translateY(-2px);
 }
 
-.main-nav a:hover:after {
+.main-nav li:hover a:after {
   width: 100%;
 }
 
@@ -455,7 +461,7 @@ section:hover {
 }
 
 .certificado-card .btn-certificado {
-  background: linear-gradient(135deg, var(--secondary-color), #d4a617);
+  background: linear-gradient(135deg, var(--secondary-color), #f2c230);
   color: #fff;
   border-radius: 50px;
   align-items: center;
@@ -466,13 +472,13 @@ section:hover {
   transition: transform .3s;
   animation: 2s infinite pulse;
   display: inline-flex;
-  box-shadow: 0 4px 10px #bf9b304d;
+  box-shadow: 0 4px 10px #f2c2304d;
 }
 
 .certificado-card .btn-certificado:hover {
   animation: none;
   transform: translateY(-2px);
-  box-shadow: 0 6px 15px #bf9b3066;
+  box-shadow: 0 6px 15px #f2c23066;
 }
 
 .hino-container {
@@ -514,7 +520,7 @@ section:hover {
   display: inline-flex;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 4px 10px #00376733;
+  box-shadow: 0 4px 10px #00286833;
 }
 
 .btn:before {
@@ -535,7 +541,7 @@ section:hover {
 .btn:hover {
   animation: none;
   transform: translateY(-3px);
-  box-shadow: 0 6px 15px #0037674d;
+  box-shadow: 0 6px 15px #0028684d;
 }
 
 footer {

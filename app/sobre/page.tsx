@@ -31,8 +31,19 @@ export default function SobrePage() {
     <>
       <SiteHeader current="sobre" />
 
+      <section className="page-hero">
+        <div className="page-hero__inner">
+          <span className="page-hero__badge">Quem somos</span>
+          <h1>Sobre os Embaixadores do Rei</h1>
+          <p>
+            Conheça a história, os valores e o propósito da organização que
+            forma meninos e jovens como líderes cristãos comprometidos com o
+            Reino de Deus.
+          </p>
+        </div>
+      </section>
+
       <div className="container">
-        <h1 className="page-title">Sobre os Embaixadores do Rei</h1>
 
         <div className="organizar-logo">
           <img src="/assets/sobre-er.png" alt="Embaixadores do Rei" />

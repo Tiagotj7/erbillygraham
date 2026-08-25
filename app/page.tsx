@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import ThemeToggle from "@/components/ThemeToggle";
 import "./home.css";
 
 export default function HomePage() {
@@ -136,48 +137,52 @@ export default function HomePage() {
               <span className="site-title">Embaixada Billy Graham</span>
             </div>
 
-            <div className="nav-container">
-              <div className="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+            <div className="nav-actions">
+              <div className="nav-container">
+                <div className="hamburger" id="hamburger">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                </div>
+
+                <nav className="main-nav" id="mainNav">
+                  <Link href="/">Início</Link>
+                  <Link href="/recursos">Recursos</Link>
+                  <Link href="/historia">História</Link>
+                  <Link href="/sobre">Sobre</Link>
+
+                  <div className="dropdown">
+                    <button className="dropdown-btn">
+                      Portal+ <i className="fas fa-chevron-down"></i>
+                    </button>
+                    <div className="dropdown-content">
+                      <a
+                        href="http://www.denaer.org.br/site/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        DENAER
+                      </a>
+                      <a
+                        href="https://somossiba.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Igreja Local
+                      </a>
+                      <a
+                        href="https://www.embaixadas.com.br/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Embaixadas
+                      </a>
+                    </div>
+                  </div>
+                </nav>
               </div>
 
-              <nav className="main-nav" id="mainNav">
-                <Link href="/">Início</Link>
-                <Link href="/recursos">Recursos</Link>
-                <Link href="/historia">História</Link>
-                <Link href="/sobre">Sobre</Link>
-
-                <div className="dropdown">
-                  <button className="dropdown-btn">
-                    Portal+ <i className="fas fa-chevron-down"></i>
-                  </button>
-                  <div className="dropdown-content">
-                    <a
-                      href="http://www.denaer.org.br/site/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      DENAER
-                    </a>
-                    <a
-                      href="https://somossiba.com.br/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Igreja Local
-                    </a>
-                    <a
-                      href="https://www.embaixadas.com.br/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Embaixadas
-                    </a>
-                  </div>
-                </div>
-              </nav>
+              <ThemeToggle />
             </div>
           </div>
         </div>
@@ -191,15 +196,38 @@ export default function HomePage() {
           className="hero-image"
         />
         <div className="overlay"></div>
+        <div className="hero-glow hero-glow-1" aria-hidden="true"></div>
+        <div className="hero-glow hero-glow-2" aria-hidden="true"></div>
+
         <div className="hero-content">
+          <Link href="/historia" className="hero-badge">
+            <span>Formando Embaixadores desde 1908</span>
+            <svg width="16" height="16" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M3.959 9.5h11.083m0 0L9.501 3.958M15.042 9.5l-5.541 5.54" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
+
           <h1 className="hero-title">Embaixada Billy Graham</h1>
+
           <p className="hero-subtitle">
             Formando jovens discípulos e líderes para transformar o mundo
             através do amor de Cristo
           </p>
-          <a href="#cards" className="hero-btn">
-            Conheça Nossa Missão
-          </a>
+
+          <div className="hero-actions">
+            <a href="#cards" className="btn-primary">
+              Conheça Nossa Missão
+            </a>
+            <a
+              href="https://wa.link/gujtci"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              <i className="fab fa-whatsapp" aria-hidden="true"></i>
+              Fale Conosco
+            </a>
+          </div>
         </div>
       </section>
 

@@ -18,7 +18,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #fff;
+            background-color: var(--bg);
             overflow-x: hidden;
         }
 
@@ -152,6 +152,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
         }
         
         .logo-container {
@@ -181,6 +182,12 @@
         }
         
         /* Navigation */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
         .nav-container {
             position: relative;
         }
@@ -244,7 +251,7 @@
             transition: left 0.5s;
         }
 
-        .main-nav a:hover::before {
+        .main-nav li:hover a::before {
             left: 100%;
         }
         
@@ -259,12 +266,12 @@
             transition: width 0.3s ease;
         }
         
-        .main-nav a:hover {
+        .main-nav li:hover a {
             color: var(--secondary-color);
             transform: translateY(-2px);
         }
         
-        .main-nav a:hover::after {
+        .main-nav li:hover a::after {
             width: 100%;
         }
 
@@ -301,7 +308,7 @@
             top: 100%;
             right: 0;
             min-width: 200px;
-            background: rgba(255, 255, 255, 0.95);
+            background: var(--surface);
             backdrop-filter: blur(10px);
             border-radius: 8px;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
@@ -334,14 +341,15 @@
             transform: rotate(180deg);
         }
 
-        /* Hero Section */
+        /* Hero Section — foto + grade + badge + duplo CTA */
         .hero {
             position: relative;
-            height: 80vh;
+            min-height: 88vh;
             overflow: hidden;
             display: flex;
             align-items: center;
             justify-content: center;
+            padding: 7rem 1.5rem 5rem;
         }
 
         .hero-image {
@@ -351,32 +359,87 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            z-index: 1;
+            z-index: 0;
         }
 
-        .overlay {
+        .hero .overlay {
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.7));
-            z-index: 2;
+            inset: 0;
+            z-index: 1;
+            background: linear-gradient(160deg, rgba(0,16,43,0.92) 0%, rgba(0,40,104,0.85) 55%, rgba(0,28,77,0.93) 100%);
         }
-        
+
+        .hero-bg-grid {
+            position: absolute;
+            inset: 0;
+            z-index: 2;
+            background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+            background-size: 44px 44px;
+            mask-image: radial-gradient(ellipse 75% 65% at 50% 35%, #000 40%, transparent 90%);
+        }
+
+        .hero-glow {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-glow-1 {
+            width: 420px;
+            height: 420px;
+            top: -120px;
+            left: -80px;
+            background: rgba(242, 194, 48, 0.22);
+        }
+
+        .hero-glow-2 {
+            width: 360px;
+            height: 360px;
+            bottom: -140px;
+            right: -60px;
+            background: rgba(255, 215, 0, 0.16);
+        }
+
         .hero-content {
             color: white;
             text-align: center;
-            max-width: 800px;
-            padding: 2rem;
+            max-width: 840px;
             z-index: 3;
             position: relative;
         }
-        
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.6rem;
+            color: #fff;
+            text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            background: rgba(255, 255, 255, 0.06);
+            padding: 0.55rem 1.2rem;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .hero-badge:hover {
+            border-color: var(--secondary-color);
+            background: rgba(242, 194, 48, 0.14);
+            transform: translateY(-2px);
+        }
+
         .hero-title {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            font-size: clamp(2.6rem, 6vw, 4.5rem);
+            font-weight: 700;
+            margin-bottom: 1.25rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.35);
             animation: fadeInUp 1s ease-out;
             background: linear-gradient(45deg, #fff, var(--secondary-color));
             -webkit-background-clip: text;
@@ -385,55 +448,51 @@
         }
         
         .hero-subtitle {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
+            font-size: 1.25rem;
+            margin-bottom: 2.25rem;
+            color: rgba(255,255,255,0.88);
+            max-width: 620px;
+            margin-left: auto;
+            margin-right: auto;
             opacity: 0;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.35);
             animation: fadeInUp 1s ease-out 0.3s forwards;
         }
-        
-        .hero-btn {
-            padding: 1rem 2.5rem;
-            background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
-            color: var(--header-bg);
-            border: none;
-            border-radius: 50px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.4s ease;
-            text-decoration: none;
-            display: inline-block;
-            animation: fadeInUp 1s ease-out 0.6s forwards;
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 1rem;
             opacity: 0;
+            animation: fadeInUp 1s ease-out 0.6s forwards;
+        }
+
+        .hero-actions .btn-primary,
+        .hero-actions .btn-secondary {
             position: relative;
             overflow: hidden;
         }
 
-        .hero-btn::before {
+        .hero-actions .btn-primary::before {
             content: '';
             position: absolute;
             top: 0;
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
             transition: left 0.5s;
         }
 
-        .hero-btn:hover::before {
+        .hero-actions .btn-primary:hover::before {
             left: 100%;
-        }
-        
-        .hero-btn:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 15px 30px rgba(242, 194, 48, 0.45);
         }
 
         /* Cards Section */
         .cards-section {
             padding: 5rem 0;
-            background: linear-gradient(to bottom, #ffffff, #f5f7fa);
+            background: linear-gradient(to bottom, var(--bg), var(--bg-alt));
         }
         
         .section-title {
@@ -467,7 +526,7 @@
         }
         
         .card {
-            background-color: white;
+            background-color: var(--surface);
             border-radius: 15px;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -615,7 +674,7 @@
         /* Billy Graham Section */
         .billy-section {
             padding: 5rem 0;
-            background: linear-gradient(to bottom, #f5f7fa, #ffffff);
+            background: linear-gradient(to bottom, var(--bg-alt), var(--surface));
         }
 
         .billy-card {
@@ -625,7 +684,7 @@
             gap: 3rem;
             max-width: 1000px;
             margin: 0 auto;
-            background: white;
+            background: var(--surface);
             border-radius: 20px;
             overflow: hidden;
             box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -688,7 +747,7 @@
         .compromisso-content {
             max-width: 900px;
             margin: 0 auto;
-            background: white;
+            background: var(--surface);
             padding: 3rem;
             border-radius: 20px;
             box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
@@ -907,10 +966,6 @@
 
         /* Responsive Design */
         @media (max-width: 1024px) {
-            .hero-title {
-                font-size: 3rem;
-            }
-            
             .cards-container {
                 grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             }
@@ -976,17 +1031,14 @@
             }
             
             .hero {
-                height: 70vh;
+                min-height: auto;
+                padding: 6.5rem 1.25rem 3.5rem;
             }
-            
-            .hero-title {
-                font-size: 2.5rem;
-            }
-            
+
             .hero-subtitle {
                 font-size: 1.1rem;
             }
-            
+
             .cards-container {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -1015,19 +1067,22 @@
         }
         
         @media (max-width: 480px) {
-            .hero-title {
-                font-size: 2rem;
-            }
-            
             .hero-subtitle {
                 font-size: 1rem;
             }
-            
-            .hero-btn {
-                padding: 0.8rem 2rem;
-                font-size: 1rem;
+
+            .hero-badge {
+                font-size: 0.78rem;
+                padding: 0.45rem 0.9rem;
             }
-            
+
+            .btn-primary,
+            .btn-secondary {
+                width: 100%;
+                justify-content: center;
+                padding: 0.85rem 1.5rem;
+            }
+
             .section-title {
                 font-size: 1.8rem;
             }

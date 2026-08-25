@@ -17,7 +17,7 @@
             font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #fff;
+            background-color: var(--bg);
             overflow-x: hidden;
         }
 
@@ -127,10 +127,10 @@
         }
         
         header {
-            background-color: var(--header-bg);
+            background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -141,6 +141,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            gap: 1rem;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 1rem;
@@ -177,6 +178,12 @@
             animation: fadeInLeft 1s ease-out 0.3s both;
         }
         
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
         .main-nav {
             animation: fadeInRight 1s ease-out;
         }
@@ -216,7 +223,7 @@
             transition: left 0.5s;
         }
 
-        .main-nav a:hover::before {
+        .main-nav li:hover a::before {
             left: 100%;
         }
         
@@ -231,12 +238,12 @@
             transition: width 0.3s ease;
         }
         
-        .main-nav a:hover {
+        .main-nav li:hover a {
             color: var(--secondary-color);
             transform: translateY(-2px);
         }
         
-        .main-nav a:hover::after {
+        .main-nav li:hover a::after {
             width: 100%;
         }
         
@@ -269,39 +276,6 @@
         
         .menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(7px, -6px);
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            text-align: center;
-            margin: 2rem 0;
-            animation: fadeInUp 1s ease-out;
-        }
-        
-        .page-title {
-            margin-top: 3rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-            animation: scaleIn 1.2s ease-out;
-        }
-        
-        .page-title::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 0;
-            height: 4px;
-            background-color: var(--secondary-color);
-            animation: expandWidth 1.5s ease-out 0.5s forwards;
-        }
-
-        @keyframes expandWidth {
-            from { width: 0; }
-            to { width: 100px; }
         }
         
         .container {
@@ -366,7 +340,7 @@
         }
         
         .info-card {
-            background-color: white;
+            background-color: var(--surface);
             border-radius: 8px;
             padding: 1.5rem;
             margin-bottom: 2rem;
@@ -543,7 +517,7 @@
         }
         
         .valor-card {
-            background-color: #fff;
+            background-color: var(--surface);
             border-radius: 10px;
             padding: 1.5rem;
             text-align: center;

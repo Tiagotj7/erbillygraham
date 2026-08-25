@@ -1,0 +1,203 @@
+/* ======================================================
+   Sistema de tema (Light / Dark) — Embaixada Billy Graham
+   Mantém a paleta original (azul marinho + dourado) e
+   apenas adapta os planos de fundo/textos ao alternar tema.
+   ====================================================== */
+
+:root {
+  --primary-color: #002868;
+  --secondary-color: #f2c230;
+  --accent-color: #ffd700;
+  --header-bg: #00102b;
+
+  --text-color: #333333;
+  --text-muted: #5b6472;
+  --bg: #ffffff;
+  --bg-alt: #f5f7fa;
+  --surface: #ffffff;
+  --surface-2: #f8f9fa;
+  --border-color: rgba(0, 40, 104, 0.12);
+  --card-shadow: 0 10px 30px rgba(0, 16, 43, 0.08);
+
+  /* Aliases usados pelas páginas existentes — mantidos para compatibilidade */
+  --light-bg: var(--surface-2);
+  --light: var(--surface);
+  --gray-light: #e9ecef;
+}
+
+html[data-theme="dark"] {
+  --text-color: #e7ebf3;
+  --text-muted: #a9b2c3;
+  --bg: #060b18;
+  --bg-alt: #0a1024;
+  --surface: #0d1530;
+  --surface-2: #0f1830;
+  --border-color: rgba(242, 194, 48, 0.16);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  --gray-light: #1b2540;
+  --light: var(--surface);
+}
+
+html,
+body {
+  background-color: var(--bg);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ---------- Alternador de tema ---------- */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: rgba(242, 194, 48, 0.2);
+  border-color: var(--secondary-color);
+  transform: translateY(-2px);
+}
+
+.theme-toggle svg {
+  width: 20px;
+  height: 20px;
+}
+
+.theme-toggle .icon-sun {
+  display: none;
+}
+html[data-theme="dark"] .theme-toggle .icon-moon {
+  display: none;
+}
+html[data-theme="dark"] .theme-toggle .icon-sun {
+  display: block;
+}
+
+/* ======================================================
+   Banner de página (padrão do novo Hero) — usado na Home
+   e replicado nas outras abas para manter consistência
+   ====================================================== */
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(242, 194, 48, 0.16), transparent 40%),
+    radial-gradient(circle at 85% 0%, rgba(255, 215, 0, 0.12), transparent 45%),
+    linear-gradient(160deg, var(--header-bg) 0%, var(--primary-color) 55%, #001c4d 100%);
+  color: #fff;
+  padding: 5rem 1.5rem 6rem;
+  text-align: center;
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 30%, #000 40%, transparent 90%);
+  pointer-events: none;
+}
+
+.page-hero__inner {
+  position: relative;
+  z-index: 2;
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.page-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.06);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 1.75rem;
+  backdrop-filter: blur(6px);
+}
+
+.page-hero__badge:hover {
+  border-color: var(--secondary-color);
+  background: rgba(242, 194, 48, 0.12);
+}
+
+.page-hero h1 {
+  font-size: clamp(2.2rem, 5vw, 3.4rem);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(45deg, #fff, var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.page-hero p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 640px;
+  margin: 0 auto;
+}
+
+.page-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.btn-primary,
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 2rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.35s ease;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent-color), var(--secondary-color));
+  color: var(--header-bg);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 15px 30px rgba(242, 194, 48, 0.45);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.06);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.35);
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--secondary-color);
+  transform: translateY(-3px);
+}
+
+@media (max-width: 768px) {
+  .page-hero {
+    padding: 3.5rem 1.25rem 4rem;
+  }
+}

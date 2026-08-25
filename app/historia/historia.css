@@ -17,7 +17,7 @@
             font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text-color);
-            background-color: #fff;
+            background-color: var(--bg);
             overflow-x: hidden;
         }
 
@@ -138,10 +138,10 @@
 
         /* Header */
         header {
-            background-color: var(--header-bg);
+            background: linear-gradient(135deg, var(--primary-color), var(--header-bg));
             color: white;
             padding: 1rem 0;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -191,6 +191,12 @@
         }
         
         /* Menu Desktop */
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.25rem;
+        }
+
         .main-nav {
             animation: fadeInRight 1s ease-out;
         }
@@ -230,7 +236,7 @@
             transition: left 0.5s;
         }
 
-        .main-nav a:hover::before {
+        .main-nav li:hover a::before {
             left: 100%;
         }
         
@@ -245,12 +251,12 @@
             transition: width 0.3s ease;
         }
         
-        .main-nav a:hover {
+        .main-nav li:hover a {
             color: var(--secondary-color);
             transform: translateY(-2px);
         }
         
-        .main-nav a:hover::after {
+        .main-nav li:hover a::after {
             width: 100%;
         }
         
@@ -288,32 +294,6 @@
         }
 
         /* Hero Section */
-        .hero {
-            background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/assets/embaixada-eua-2.png');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
-            padding: 8rem 2rem;
-            margin-bottom: 2rem;
-            animation: fadeInUp 1s ease-out;
-            position: relative;
-        }
-        
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            animation: bounceIn 1.2s ease-out;
-        }
-        
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 800px;
-            margin: 0 auto;
-            animation: fadeInUp 1s ease-out 0.3s both;
-        }
-
         /* Main Content */
         .container {
             max-width: 1200px;
@@ -420,7 +400,7 @@
             position: relative;
             margin-bottom: 3rem;
             padding: 1.5rem;
-            background-color: white;
+            background-color: var(--surface);
             border-radius: 8px;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -577,11 +557,11 @@
                 gap: 1rem;
             }
 
-            .hero {
+            .page-hero {
                 padding: 6rem 1.5rem;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 2.5rem;
             }
         }
@@ -683,15 +663,15 @@
                 padding: 1rem;
             }
             
-            .hero {
+            .page-hero {
                 padding: 4rem 1rem;
             }
 
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 2rem;
             }
 
-            .hero p {
+            .page-hero p {
                 font-size: 1rem;
             }
             
@@ -761,7 +741,7 @@
                 height: 2px;
             }
             
-            .hero h1 {
+            .page-hero h1 {
                 font-size: 1.8rem;
             }
 
