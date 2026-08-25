@@ -349,7 +349,7 @@
             position: absolute;
             inset: 0;
             z-index: 1;
-            background: linear-gradient(160deg, rgba(0,16,43,0.92) 0%, rgba(0,40,104,0.85) 55%, rgba(0,28,77,0.93) 100%);
+            background: linear-gradient(160deg, rgba(0,16,43,0.94) 0%, rgba(0,40,104,0.9) 50%, rgba(0,10,30,0.95) 100%);
         }
 
         .hero-bg-grid {

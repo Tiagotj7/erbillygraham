@@ -367,7 +367,7 @@ header {
 
 .hero .overlay {
   z-index: 1;
-  background: linear-gradient(160deg, #00102beb 0%, #002868d9 55%, #001c4ded 100%);
+  background: linear-gradient(160deg, #00102bf0 0%, #002868e6 50%, #000a1ef2 100%);
   position: absolute;
   inset: 0;
 }
